@@ -10,11 +10,11 @@ import { ThemeProvider } from 'styled-components';
 
 const theme = {
   colors: {
-    black: '#262626',
-    yellow: '#F6B83D',
-    rose: '#FFF4DF',
+    black: '#1D1E21',
     white: '#FFFFFF',
-    red: 'rgba(239, 36, 71, 1)',
+    bluelight:'#59B17A10%',
+    whiteblue: '#F7F8FA',
+    green: '#59B17A',
   },
 
   spacing: value => `${value * 5}px`,

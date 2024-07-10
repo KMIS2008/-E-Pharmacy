@@ -17,9 +17,7 @@ const Home = lazy(()=> import('Pages/Home/Home'));
 // const Login = lazy(()=> import ('Pages/Login/Login'));
 // const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
 
-
     export const App =()=> {
-      
       const dispatch = useDispatch();
 
       const { isRefreshing } = useAuth();
@@ -52,8 +50,9 @@ const Home = lazy(()=> import('Pages/Home/Home'));
         wrapperClass
       />}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path = "/" element = {<SharedLayout/>}>
+             <Route path = "/" element = {<SharedLayout/>}>
+             <Route path="home" element={<Home/>}/>
+           
               {/* <Route path="home" element={<Home/>}/> */}
               {/* <Route path="register" element = { <RestrictedRoute redirectTo="/profile" component={<Reistr />} />}/>
               <Route path = "login" element ={<RestrictedRoute redirectTo="/profile" component={<Login/>} />}/> */}
