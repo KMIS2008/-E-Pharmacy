@@ -13,6 +13,9 @@ import { refreshUser } from 'redux/auth/operations';
 
 import { lazy, Suspense  } from 'react';
 const Home = lazy(()=> import('Pages/Home/Home'));
+const MedicineStorePage = lazy(()=> import('Pages/MedicineStorePage/MedicineStorePage'));
+const MedicinePage = lazy(()=> import('Pages/MedicinePage/MedicinePage'));
+
 // const Reistr = lazy(()=> import('Pages/Registr/Registr'));
 // const Login = lazy(()=> import ('Pages/Login/Login'));
 // const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
@@ -52,7 +55,9 @@ const Home = lazy(()=> import('Pages/Home/Home'));
           <Routes>
              <Route path = "/" element = {<SharedLayout/>}>
              <Route path="home" element={<Home/>}/>
-           
+             <Route path="medicine-store" element={<MedicineStorePage/>}/>
+             <Route path="medicine" element={<MedicinePage/>}/>
+             
               {/* <Route path="home" element={<Home/>}/> */}
               {/* <Route path="register" element = { <RestrictedRoute redirectTo="/profile" component={<Reistr />} />}/>
               <Route path = "login" element ={<RestrictedRoute redirectTo="/profile" component={<Login/>} />}/> */}

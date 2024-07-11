@@ -1,4 +1,4 @@
-import {Button} from './NavigationLinks.styled';
+import {Container, Button} from './NavigationLinks.styled';
 import { useNavigate } from 'react-router-dom';
 
 export const NavigationLinks=()=>{
@@ -14,10 +14,10 @@ export const NavigationLinks=()=>{
     };
 
     return(
-        <>
+        <Container>
            <Button type="button" onClick={handleHomeClick}> Home</Button>
            <Button type="button" onClick={handleHomeMedicineStore}> Medicine store</Button>
            <Button type="button" onClick={handleHomeMedicine}> Medicine</Button>
-        </>
+        </Container>
     )
 }

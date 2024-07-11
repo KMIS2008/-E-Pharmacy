@@ -4,6 +4,7 @@ export const ContaterLogo = styled.div`
 display: flex;
 gap: ${p=>p.theme.spacing(2)};
 align-items: center;
+cursor: pointer;
 `
 
 export const ImgLogo = styled.img`

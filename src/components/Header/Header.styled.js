@@ -5,11 +5,13 @@ export const ContaterHeder = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+padding: 25px 20px;
 background-color: ${props => (props.$isHome ? '#59B17A' : '#F7F8FA')}; 
 `
 
 export const Svg = styled.svg`
 width: 32px;
 height: 26px;
+cursor: pointer;
 `
 

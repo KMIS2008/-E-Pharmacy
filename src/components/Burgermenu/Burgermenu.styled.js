@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
 position: fixed;
   margin: 0 auto;
+  padding-top: 260px;
+  padding-bottom: 40px;
 
   top: 0;
   left: auto;
@@ -13,7 +15,7 @@ position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   background-color: ${props => (props.theme.colors.green)}; 
 
