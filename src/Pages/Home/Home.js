@@ -1,10 +1,13 @@
-import {ContainerHome} from "./Homestyled";
+import {ContainerHome, ContainerMainBanner} from "./Homestyled";
+import{MainBanner} from '../../components/MainBanner/MainBanner';
 
 
 export default function Home(){
 return (
     <ContainerHome>
-       <p>sdfgjhdfkadfkafdhfjf</p>
+       <ContainerMainBanner>
+         <MainBanner/>
+       </ContainerMainBanner>
        
     </ContainerHome>
 )
