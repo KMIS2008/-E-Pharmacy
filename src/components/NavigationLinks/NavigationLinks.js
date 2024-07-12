@@ -1,7 +1,7 @@
 import {Container, Button} from './NavigationLinks.styled';
 import { useNavigate } from 'react-router-dom';
 
-export const NavigationLinks=()=>{
+export const NavigationLinks=({stylefooter=false})=>{
     const navigator = useNavigate(); 
     const handleHomeClick = () => {
         navigator('home');     
@@ -14,10 +14,10 @@ export const NavigationLinks=()=>{
     };
 
     return(
-        <Container>
-           <Button type="button" onClick={handleHomeClick}> Home</Button>
-           <Button type="button" onClick={handleHomeMedicineStore}> Medicine store</Button>
-           <Button type="button" onClick={handleHomeMedicine}> Medicine</Button>
+        <Container $stylefooter={stylefooter}>
+           <Button $stylefooter={stylefooter} type="button" onClick={handleHomeClick}> Home</Button>
+           <Button $stylefooter={stylefooter} type="button" onClick={handleHomeMedicineStore}> Medicine store</Button>
+           <Button $stylefooter={stylefooter} type="button" onClick={handleHomeMedicine}> Medicine</Button>
         </Container>
     )
 }

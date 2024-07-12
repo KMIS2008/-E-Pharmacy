@@ -7,6 +7,10 @@ justify-content: end;
 list-style: none;
 gap: 12px;
 margin-top: ${p=>p.theme.spacing(4)};
+
+@media (min-width: 1440px) {
+  margin-top: ${p=>p.theme.spacing(0)};
+}
 `
 
 

@@ -7,7 +7,7 @@ import { Burgermenu } from 'components/Burgermenu/Burgermenu';
 
 export const Header=()=>{
   const [isOpen, setIsOpen] = useState(false);
-  const [isTablet, setisTablet] = useState(window.innerWidth < 1280);
+  const [isTablet, setisTablet] = useState(window.innerWidth < 1440);
 
   const location = useLocation();
   const isHome = location.pathname === '/home';
@@ -18,7 +18,7 @@ export const Header=()=>{
 
   useEffect(() => {
     const handleResize = () => {
-      setisTablet(window.innerWidth < 1280);
+      setisTablet(window.innerWidth < 1440);
     };
 
     window.addEventListener('resize', handleResize);
