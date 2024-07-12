@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.ec8ffcdd.css",
-    "main.js": "/E-Pharmacy/static/js/main.8e9db0f8.js",
-    "static/js/898.a1ba1d01.chunk.js": "/E-Pharmacy/static/js/898.a1ba1d01.chunk.js",
+    "main.js": "/E-Pharmacy/static/js/main.4f2c8ade.js",
+    "static/js/922.412901fd.chunk.js": "/E-Pharmacy/static/js/922.412901fd.chunk.js",
     "static/js/793.4d4fafbb.chunk.js": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js",
     "static/js/819.42518877.chunk.js": "/E-Pharmacy/static/js/819.42518877.chunk.js",
     "static/media/DrugMobile2.png": "/E-Pharmacy/static/media/DrugMobile2.7a38f08f563b08786414.png",
@@ -17,13 +17,13 @@
     "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.b6049bd05b9a54059132c9d7d8f6d223.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.ec8ffcdd.css.map": "/E-Pharmacy/static/css/main.ec8ffcdd.css.map",
-    "main.8e9db0f8.js.map": "/E-Pharmacy/static/js/main.8e9db0f8.js.map",
-    "898.a1ba1d01.chunk.js.map": "/E-Pharmacy/static/js/898.a1ba1d01.chunk.js.map",
+    "main.4f2c8ade.js.map": "/E-Pharmacy/static/js/main.4f2c8ade.js.map",
+    "922.412901fd.chunk.js.map": "/E-Pharmacy/static/js/922.412901fd.chunk.js.map",
     "793.4d4fafbb.chunk.js.map": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js.map",
     "819.42518877.chunk.js.map": "/E-Pharmacy/static/js/819.42518877.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec8ffcdd.css",
-    "static/js/main.8e9db0f8.js"
+    "static/js/main.4f2c8ade.js"
   ]
 }
