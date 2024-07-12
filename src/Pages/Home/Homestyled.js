@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerHome= styled.div` 
-
 `
 export const ContainerMainBanner=styled.div`
 position: relative;
