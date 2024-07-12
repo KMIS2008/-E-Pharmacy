@@ -1,20 +1,29 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.ec8ffcdd.css",
-    "main.js": "/E-Pharmacy/static/js/main.6c787f39.js",
-    "static/js/257.300f1a80.chunk.js": "/E-Pharmacy/static/js/257.300f1a80.chunk.js",
+    "main.js": "/E-Pharmacy/static/js/main.8e9db0f8.js",
+    "static/js/898.a1ba1d01.chunk.js": "/E-Pharmacy/static/js/898.a1ba1d01.chunk.js",
     "static/js/793.4d4fafbb.chunk.js": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js",
     "static/js/819.42518877.chunk.js": "/E-Pharmacy/static/js/819.42518877.chunk.js",
+    "static/media/DrugMobile2.png": "/E-Pharmacy/static/media/DrugMobile2.7a38f08f563b08786414.png",
+    "static/media/DrugMobile3.png": "/E-Pharmacy/static/media/DrugMobile3.54bd63069e79302c16fa.png",
+    "static/media/DrugTablet1.png": "/E-Pharmacy/static/media/DrugTablet1.93acf7a91cc6073e665a.png",
+    "static/media/DrugDesctop1.png": "/E-Pharmacy/static/media/DrugDesctop1.acb16b69153915a185b4.png",
+    "static/media/DrugTablet2.png": "/E-Pharmacy/static/media/DrugTablet2.7d8df05d74c679cd6cec.png",
+    "static/media/DrugTablet3.png": "/E-Pharmacy/static/media/DrugTablet3.872336758faf3f3fd513.png",
+    "static/media/DrugDesctop2.png": "/E-Pharmacy/static/media/DrugDesctop2.2432eae6757d1d57363e.png",
+    "static/media/DrugDesctop3.png": "/E-Pharmacy/static/media/DrugDesctop3.32f89495053dcfdab267.png",
+    "static/media/DrugMobile1.png": "/E-Pharmacy/static/media/DrugMobile1.72a91231d077920c2010.png",
     "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.b6049bd05b9a54059132c9d7d8f6d223.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.ec8ffcdd.css.map": "/E-Pharmacy/static/css/main.ec8ffcdd.css.map",
-    "main.6c787f39.js.map": "/E-Pharmacy/static/js/main.6c787f39.js.map",
-    "257.300f1a80.chunk.js.map": "/E-Pharmacy/static/js/257.300f1a80.chunk.js.map",
+    "main.8e9db0f8.js.map": "/E-Pharmacy/static/js/main.8e9db0f8.js.map",
+    "898.a1ba1d01.chunk.js.map": "/E-Pharmacy/static/js/898.a1ba1d01.chunk.js.map",
     "793.4d4fafbb.chunk.js.map": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js.map",
     "819.42518877.chunk.js.map": "/E-Pharmacy/static/js/819.42518877.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec8ffcdd.css",
-    "static/js/main.6c787f39.js"
+    "static/js/main.8e9db0f8.js"
   ]
 }
