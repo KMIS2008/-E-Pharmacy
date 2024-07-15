@@ -8,6 +8,7 @@ import GirlDesctop1 from '../../images/GirlDesctop1.png';
 import GirlDesctop2 from '../../images/GirlDesctop2.png';
 import GirlDesctop3 from '../../images/GirlDesctop3.png';
 import {Container, ContainerIn, Title, Discription, Button, Img, ContainerFlex} from './AddPharmacyPromoSection.styled';
+import {FeaturesSection} from '../../components/FeaturesSection/FeaturesSection';
 
 export const AddPharmacyPromoSection=()=>{
     return(
@@ -67,10 +68,9 @@ export const AddPharmacyPromoSection=()=>{
           </picture>
 
             </ContainerIn>
-            
 
+            <FeaturesSection/>
 
-        
         </Container>
     )
 }

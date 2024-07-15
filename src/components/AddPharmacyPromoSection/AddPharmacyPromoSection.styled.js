@@ -6,7 +6,7 @@ padding: 0 20px;
 opacity: 0px;
 `
 export const ContainerIn =styled.div`
-
+margin-bottom: 32px;
 padding:20px 20px;
 border-radius: 32px;
 background: ${p=>p.theme.colors.green};
@@ -79,9 +79,8 @@ export const Img = styled.img`
 width: 100%;
 @media (min-width: 1440px) {
     width: 600px
- 
-}
 
+}
 `
 
 export const ContainerFlex=styled.div`
@@ -89,5 +88,4 @@ export const ContainerFlex=styled.div`
     width: 50%;
    margin-right: 60px;
 }
-
 `
