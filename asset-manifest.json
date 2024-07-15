@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.ec8ffcdd.css",
-    "main.js": "/E-Pharmacy/static/js/main.bb1f8073.js",
-    "static/js/227.03f19a98.chunk.js": "/E-Pharmacy/static/js/227.03f19a98.chunk.js",
+    "main.js": "/E-Pharmacy/static/js/main.b9f6fe1c.js",
+    "static/js/365.6b10ad7d.chunk.js": "/E-Pharmacy/static/js/365.6b10ad7d.chunk.js",
     "static/js/793.4d4fafbb.chunk.js": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js",
     "static/js/819.42518877.chunk.js": "/E-Pharmacy/static/js/819.42518877.chunk.js",
     "static/media/GirlMobile3.png": "/E-Pharmacy/static/media/GirlMobile3.d1c4e240974d99f93915.png",
@@ -23,16 +23,16 @@
     "static/media/DrugDesctop2.png": "/E-Pharmacy/static/media/DrugDesctop2.2432eae6757d1d57363e.png",
     "static/media/DrugDesctop3.png": "/E-Pharmacy/static/media/DrugDesctop3.32f89495053dcfdab267.png",
     "static/media/DrugMobile1.png": "/E-Pharmacy/static/media/DrugMobile1.72a91231d077920c2010.png",
-    "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.121ca641af64168af79f9cbb9ae45023.svg",
+    "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.d056852cd9b38603d15e06ba6a12ab77.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.ec8ffcdd.css.map": "/E-Pharmacy/static/css/main.ec8ffcdd.css.map",
-    "main.bb1f8073.js.map": "/E-Pharmacy/static/js/main.bb1f8073.js.map",
-    "227.03f19a98.chunk.js.map": "/E-Pharmacy/static/js/227.03f19a98.chunk.js.map",
+    "main.b9f6fe1c.js.map": "/E-Pharmacy/static/js/main.b9f6fe1c.js.map",
+    "365.6b10ad7d.chunk.js.map": "/E-Pharmacy/static/js/365.6b10ad7d.chunk.js.map",
     "793.4d4fafbb.chunk.js.map": "/E-Pharmacy/static/js/793.4d4fafbb.chunk.js.map",
     "819.42518877.chunk.js.map": "/E-Pharmacy/static/js/819.42518877.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec8ffcdd.css",
-    "static/js/main.bb1f8073.js"
+    "static/js/main.b9f6fe1c.js"
   ]
 }
