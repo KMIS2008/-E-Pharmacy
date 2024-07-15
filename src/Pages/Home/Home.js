@@ -2,6 +2,8 @@ import {ContainerHome, ContainerMainBanner} from "./Homestyled";
 import{MainBanner} from '../../components/MainBanner/MainBanner';
 import {PromoBanners} from '../../components/PromoBanners/PromoBanners';
 import {MedicineStores} from '../../components/MedicineStores/MedicineStores';
+// import {ListofStores} from '../../components/ListofStores/ListofStores';
+import {AddPharmacyPromoSection} from '../../components/AddPharmacyPromoSection/AddPharmacyPromoSection';
 
 export default function Home(){
 return (
@@ -13,6 +15,10 @@ return (
        <PromoBanners/>
 
        <MedicineStores/>
+
+       {/* <ListofStores/> */}
+
+       <AddPharmacyPromoSection/>
        
     </ContainerHome>
 )
