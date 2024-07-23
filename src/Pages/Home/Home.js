@@ -4,6 +4,7 @@ import {PromoBanners} from '../../components/PromoBanners/PromoBanners';
 import {MedicineStores} from '../../components/MedicineStores/MedicineStores';
 // import {ListofStores} from '../../components/ListofStores/ListofStores';
 import {AddPharmacyPromoSection} from '../../components/AddPharmacyPromoSection/AddPharmacyPromoSection';
+import {ReviewsSection} from '../../components/ReviewsSection/ReviewsSection';
 
 export default function Home(){
 return (
@@ -19,6 +20,8 @@ return (
        {/* <ListofStores/> */}
 
        <AddPharmacyPromoSection/>
+
+       <ReviewsSection/>
        
     </ContainerHome>
 )

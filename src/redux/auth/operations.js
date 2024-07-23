@@ -3,8 +3,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-axios.defaults.baseURL = "https://petlove.b.goit.study/api";
-const User_URL='/users/current';
+axios.defaults.baseURL = "https://e-pharmacy-backend-1.onrender.com/api";
+// const User_URL='/users/current';
 
 const setAuthHeader = token => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -18,7 +18,7 @@ const setAuthHeader = token => {
     'auth/register',
     async (credentials, thunkAPI) => {
       try {
-        const res = await axios.post('/users/signup', credentials);
+        const res = await axios.post('/user/register', credentials);
         setAuthHeader(res.data.token);
         return res.data;
       } catch (error) {
@@ -40,7 +40,7 @@ const setAuthHeader = token => {
     'auth/login',
     async (credentials, thunkAPI) => {
       try {
-        const res = await axios.post('/users/signin', credentials);
+        const res = await axios.post('/user/login', credentials);
         setAuthHeader(res.data.token);
   
         return res.data;
@@ -61,7 +61,7 @@ const setAuthHeader = token => {
 
   export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-      await axios.post('/users/signout');
+      await axios.post('/user/logout');
       clearAuthHeader();
     } catch (error) {
       toast.error(`Error: ${error.message}`, {
@@ -89,7 +89,7 @@ const setAuthHeader = token => {
   
       try {
         setAuthHeader(persistedToken);
-        const res = await axios.get('/users/current');
+        const res = await axios.get('/user/current');
         return res.data;
       } catch (error) {
         toast.error(`Error: ${error.message}`, {
@@ -106,20 +106,20 @@ const setAuthHeader = token => {
     }
   );
 
-  export const fetchUserEdit = createAsyncThunk('user/edit', async (info, thunkAPI) => {
-    try {
-        const response = await axios.patch(`${User_URL}/edit`, info);
-        return response.data;
-    } catch (e) {
-              toast.error(`Error: ${e.message}`, {
-            position: toast.POSITION.TOP_RIGHT,
-            autoClose: 5000, 
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-        return thunkAPI.rejectWithValue(e.message);
-    }
-});
+//   export const fetchUserEdit = createAsyncThunk('user/edit', async (info, thunkAPI) => {
+//     try {
+//         const response = await axios.patch(`${User_URL}/edit`, info);
+//         return response.data;
+//     } catch (e) {
+//               toast.error(`Error: ${e.message}`, {
+//             position: toast.POSITION.TOP_RIGHT,
+//             autoClose: 5000, 
+//             hideProgressBar: true,
+//             closeOnClick: true,
+//             pauseOnHover: true,
+//             draggable: true,
+//             progress: undefined,
+//         });
+//         return thunkAPI.rejectWithValue(e.message);
+//     }
+// });

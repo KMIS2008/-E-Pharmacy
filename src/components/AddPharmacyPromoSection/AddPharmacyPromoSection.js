@@ -9,8 +9,13 @@ import GirlDesctop2 from '../../images/GirlDesctop2.png';
 import GirlDesctop3 from '../../images/GirlDesctop3.png';
 import {Container, ContainerIn, Title, Discription, Button, Img, ContainerFlex} from './AddPharmacyPromoSection.styled';
 import {FeaturesSection} from '../../components/FeaturesSection/FeaturesSection';
+import { useNavigate } from 'react-router-dom';
 
 export const AddPharmacyPromoSection=()=>{
+  const navigator = useNavigate(); 
+  const handleHomeMedicineStore = () => {
+    navigator('/medicine-store');     
+};
     return(
         <Container>
           <ContainerIn>
@@ -20,7 +25,7 @@ export const AddPharmacyPromoSection=()=>{
               prescriptions filled from home by connecting with your community 
               pharmacy through our online platform.</Discription>
 
-            <Button type="button">Buy medicine</Button>                
+            <Button type="button" onClick={handleHomeMedicineStore}>Buy medicine</Button>                
             </ContainerFlex>
 
 

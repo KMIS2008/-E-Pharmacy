@@ -1,6 +1,12 @@
 import {ContainerList, Numbert, Text, TextRaite, Button, ContainerBanner, ContainerSale} from './Banner1.styled';
+import { useNavigate } from 'react-router-dom';
 
 export const Banner1=()=>{
+   const navigator = useNavigate(); 
+   const handleHomeMedicine = () => {
+      navigator('/medicine');     
+ };
+
     return(
        
           <ContainerList>
@@ -10,7 +16,7 @@ export const Banner1=()=>{
              </ContainerBanner>
              <ContainerSale>
                 <TextRaite>70%</TextRaite>
-                <Button type='button'>Shop now</Button>
+                <Button type='button' onClick={handleHomeMedicine}>Shop now</Button>
              </ContainerSale>
           </ContainerList>
       
