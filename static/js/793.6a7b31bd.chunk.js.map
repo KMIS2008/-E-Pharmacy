@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/793.6a7b31bd.chunk.js","mappings":"2LAAe,SAASA,IACpB,OACIC,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GAGR,C","sources":["Pages/MedicineStorePage/MedicineStorePage.js"],"sourcesContent":["export default function MedicineStorePage(){\n    return(\n        <>\n        </>\n    )\n}\n"],"names":["MedicineStorePage","_jsx","_Fragment"],"sourceRoot":""}
