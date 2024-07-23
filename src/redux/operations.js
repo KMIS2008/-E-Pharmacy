@@ -5,11 +5,31 @@ import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = "https://e-pharmacy-backend-1.onrender.com/api";
 const REVIEWS_URL= '/customer-reviews';
+const NEAREST_URL='/stores/nearest'; 
 
 
 export const fetchreviews = createAsyncThunk('reviews', async(_, thunkAPI)=>{
     try {
         const response = await axios.get(`${REVIEWS_URL}`);
+        return response.data;
+        
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
+
+export const fetchnearest = createAsyncThunk('nearest', async(_, thunkAPI)=>{
+    try {
+        const response = await axios.get(`${NEAREST_URL}`);
         return response.data;
         
     } catch (e){

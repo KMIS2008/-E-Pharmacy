@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from "./auth/authSlice";
 import {reviewsReducer} from './rewiesSlice';
+import {nearestReducer} from './nearestSlice';
 
 // import {newsReducer} from './newsSlice';
 // import {noticesReducer} from './noticesSlice';
@@ -31,6 +32,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     reviews: reviewsReducer,
+    nearest: nearestReducer,
     // news: newsReducer,
     // notices: noticesReducer,
     // friends: friendReducer,

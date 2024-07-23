@@ -1,32 +1,56 @@
-import { nanoid } from "nanoid";
 import sprite from '../../images/sprite.svg';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNearest } from "redux/selects";
+import { fetchnearest } from "redux/operations";
+import {Container, ContainerItem, ContainerTitle, ContainerRating, 
+        Title, SvgRating, Text, TextStatus, SvgContact, ContainerConntact,
+        TextContact} from './ListofStores.styled';
 
-export const ListofStores = ({ stores }) => {
+export const ListofStores = () => {
+    const stores=useSelector(selectNearest);
+    const dispatch=useDispatch();
+
+    useEffect(()=>{
+        dispatch(fetchnearest())
+      }, [dispatch])
+
     return (
-        <ul>
+        <Container>
             {stores.map(store => (
-                <li key={nanoid()}>
-                    <h5>{store.name}</h5>
-                    <svg>
-                        <use xlinkHref={sprite + '#icon-star'} />
-                    </svg>
-                    <p>{store.description}</p>
+                <ContainerItem key={store._id}>
+                    <ContainerTitle>
+                      <Title>{store.name}</Title>
+                      <ContainerRating>
+                        <SvgRating>
+                          <use xlinkHref={sprite + '#icon-star'} />
+                        </SvgRating>
+                        <Text>{store.rating}</Text>                        
+                      </ContainerRating>
 
-                    <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.address)}`} target="_blank" rel="noreferrer noopener">
-                        <svg>
+                      <TextStatus>Open</TextStatus>                        
+                    </ContainerTitle>
+                    
+                    <ContainerConntact>
+                      <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.address)}`} target="_blank" rel="noreferrer noopener">
+                        <SvgContact>
                             <use xlinkHref={sprite + '#icon-map-pin'} />
-                        </svg>
-                    </a>
-                    <p>{store.address}</p>
+                        </SvgContact>
+                      </a>
+                      <TextContact>{store.address}{store.city}</TextContact>                        
+                    </ContainerConntact>
 
-                    <a href={`tel:${store.phone}`} target="_blank" rel="noreferrer noopener">
-                        <svg>
+                    <ContainerConntact>
+                      <a href={`tel:${store.phone}`} target="_blank" rel="noreferrer noopener">
+                        <SvgContact>
                             <use xlinkHref={sprite + '#icon-phone'} />
-                        </svg>
-                    </a>
-                    <p>{store.phone}</p>
-                </li>
+                        </SvgContact>
+                      </a>
+                      <TextContact>{store.phone}</TextContact>                        
+                    </ContainerConntact>
+
+                </ContainerItem>
             ))}
-        </ul>
+        </Container>
     );
 };

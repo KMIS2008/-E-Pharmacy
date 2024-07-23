@@ -75,5 +75,3 @@ line-height: 1,25;
 text-align: center;
 color: #93939A;
 `
-
-
