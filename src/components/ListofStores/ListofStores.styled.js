@@ -18,6 +18,7 @@ list-style: none;
 `
 
 export const ContainerItem=styled.li`
+position: relative;
 margin-bottom: ${p=>p.theme.spacing(4)};
 padding: 40px 40px 20px 40px;
 gap: 14px;
@@ -52,6 +53,10 @@ color: #1D1E21;
 white-space: nowrap;        /* Не позволяет тексту переноситься на новую строку */
 overflow: hidden;           /* Обрезает текст, выходящий за пределы контейнера */
 text-overflow: ellipsis;
+
+@media (min-width: 768px) {
+font-size: 20px;
+}
 `
 
 export const SvgRating=styled.svg`
@@ -106,4 +111,24 @@ font-weight: 400;
 line-height: 1,29;
 text-align: left;
 color: #93939A;
+
+@media (min-width: 768px) {
+font-size: 16px;
+}
+`
+
+export const ImgTop=styled.img`
+position: absolute;
+right: 0;
+bottom: 30px;
+`
+export const Img=styled.img`
+position: absolute;
+right: 0;
+bottom: 5px;
+`
+export const ImgBottom=styled.img`
+position: absolute;
+right: 0;
+bottom: 0;
 `
