@@ -1,12 +1,13 @@
 import {HeaderStores} from '../HeaderStores/HeaderStores';
 import {ListofStores} from '../ListofStores/ListofStores';
 
-export const MedicineStores=()=>{
+
+export const MedicineStores=({title, stores})=>{
     return(
 
         <>
-          <HeaderStores/>
-          <ListofStores/>
+          <HeaderStores title={title}/>
+          <ListofStores stores={stores}/>
         </>
     )
 }

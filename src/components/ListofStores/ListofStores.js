@@ -1,7 +1,7 @@
 import sprite from '../../images/sprite.svg';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectNearest } from "redux/selects";
+// import { selectNearest } from "redux/selects";
 import { fetchnearest } from "redux/operations";
 import {Container, ContainerItem, ContainerTitle, ContainerRating, 
         Title, SvgRating, Text, TextStatus, SvgContact, ContainerConntact,
@@ -13,9 +13,10 @@ import RectangleTD42214 from '../../images/RectangleTD42214.png';
 import RectangleTD42213 from '../../images/RectangleTD42213.png';
 import RectangleTD42212 from '../../images/RectangleTD42212.png';
 
-export const ListofStores = () => {
-    const stores=useSelector(selectNearest);
-    const dispatch=useDispatch();
+export const ListofStores = ({stores}) => {
+    // const stores=useSelector(selectNearest);
+    // const dispatch=useDispatch();
+    // const location = useLocation();
 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -31,12 +32,12 @@ export const ListofStores = () => {
     };
   }, []);
 
-    useEffect(()=>{
-        dispatch(fetchnearest())
-      }, [dispatch])
+    // useEffect(()=>{
+    //     dispatch(fetchnearest())
+    //   }, [dispatch])
 
     return (
-        <Container>
+        <Container >
             {stores.map(store => (
                 <ContainerItem key={store._id}>
                     <ContainerTitle>

@@ -3,6 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from "./auth/authSlice";
 import {reviewsReducer} from './rewiesSlice';
 import {nearestReducer} from './nearestSlice';
+import {storesReducer} from './storesSlices';
 
 // import {newsReducer} from './newsSlice';
 // import {noticesReducer} from './noticesSlice';
@@ -33,6 +34,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     reviews: reviewsReducer,
     nearest: nearestReducer,
+    stores: storesReducer,
     // news: newsReducer,
     // notices: noticesReducer,
     // friends: friendReducer,
