@@ -132,3 +132,44 @@ position: absolute;
 right: 0;
 bottom: 0;
 `
+
+export const Button=styled.button`
+margin-bottom: ${p=>p.theme.spacing(4)};
+width: 102px;
+height: 34px;
+padding: 10px 16px;
+gap: 10px;
+border-radius: 24px;
+opacity: 0px;
+background: #59B17A;
+
+font-family: Inter;
+font-size: 14px;
+font-weight: 500;
+line-height: 1;
+text-align: center;
+color: #FFFFFF;
+
+cursor: pointer;
+`
+export const ContainerButtonRating=styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+`
+
+export const ImgMedecineTop=styled.img`
+position: absolute;
+right: 0;
+top: 0;
+`
+export const ImgMedecine=styled.img`
+position: absolute;
+right: 0;
+top: 5px;
+`
+export const ImgMedecineBottom=styled.img`
+position: absolute;
+right: 0;
+top: 70px;
+`

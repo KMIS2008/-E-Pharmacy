@@ -1,25 +1,32 @@
 import sprite from '../../images/sprite.svg';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import { selectNearest } from "redux/selects";
-import { fetchnearest } from "redux/operations";
+import { useLocation, useNavigate } from 'react-router-dom';
 import {Container, ContainerItem, ContainerTitle, ContainerRating, 
         Title, SvgRating, Text, TextStatus, SvgContact, ContainerConntact,
-        TextContact, ImgTop, Img, ImgBottom} from './ListofStores.styled';
+        TextContact, ImgTop, Img, ImgBottom, Button, ContainerButtonRating,
+        ImgMedecineTop, ImgMedecine, ImgMedecineBottom} from './ListofStores.styled';
 import Rectangle42212 from '../../images/Rectangle42212.png';
 import Rectangle42213 from '../../images/Rectangle42213.png';
 import Rectangle42214 from '../../images/Rectangle42214.png';
 import RectangleTD42214 from '../../images/RectangleTD42214.png';
 import RectangleTD42213 from '../../images/RectangleTD42213.png';
 import RectangleTD42212 from '../../images/RectangleTD42212.png';
+import RectangleMedicine42212 from '../../images/RectangleMedicine42212.png';
+import RectangleMedicine42213 from '../../images/RectangleMedicine42213.png';
+import RectangleMedicine42214 from '../../images/RectangleMedicine42214.png';
 
 export const ListofStores = ({stores}) => {
-    // const stores=useSelector(selectNearest);
-    // const dispatch=useDispatch();
-    // const location = useLocation();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const shouldRenderButton = location.pathname === '/medicine-store' && !isMobile;
+    const shouldRenderImages = location.pathname === '/home';
+    const shouldRenderMedicineImages = location.pathname === '/medicine-store'&& isMobile;
 
+    const handleNavigat=()=>{
+        navigate('/medicine')
+    }
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -32,24 +39,26 @@ export const ListofStores = ({stores}) => {
     };
   }, []);
 
-    // useEffect(()=>{
-    //     dispatch(fetchnearest())
-    //   }, [dispatch])
-
     return (
         <Container >
             {stores.map(store => (
                 <ContainerItem key={store._id}>
                     <ContainerTitle>
                       <Title>{store.name}</Title>
-                      <ContainerRating>
+
+                      {!shouldRenderButton && (
+                       <ContainerRating>
                         <SvgRating>
                           <use xlinkHref={sprite + '#icon-star'} />
                         </SvgRating>
                         <Text>{store.rating}</Text>                        
-                      </ContainerRating>
+                      </ContainerRating>      
+                          )}
 
-                      <TextStatus>Open</TextStatus>                        
+                      {!shouldRenderButton && (
+                      <TextStatus>Open</TextStatus>     
+                          )}
+                       
                     </ContainerTitle>
 
                     <ContainerConntact>
@@ -69,19 +78,58 @@ export const ListofStores = ({stores}) => {
                       </a>
                       <TextContact>{store.phone}</TextContact>                        
                     </ContainerConntact>
-                    {isMobile ? (
-                                 <>
-                                 <ImgTop src={Rectangle42214} alt="Image Top" />
-                                 <Img src={Rectangle42213} alt="Image Middle" />
-                                 <ImgBottom src={Rectangle42212} alt="Image Bottom" />
-                                 </>
-                            ) : (
+
+                   {shouldRenderImages && (
+                        isMobile ? (
+                            <>
+                                <ImgTop src={Rectangle42214} alt="Image Top" />
+                                <Img src={Rectangle42213} alt="Image Middle" />
+                                <ImgBottom src={Rectangle42212} alt="Image Bottom" />
+                            </>
+                        ) : (
+                            <>
+                                <ImgTop src={RectangleTD42214} alt="Image Top" />
+                                <Img src={RectangleTD42213} alt="Image Middle" />
+                                <ImgBottom src={RectangleTD42212} alt="Image Bottom" />
+                            </>
+                        )
+                    )}
+                            <ContainerButtonRating>
+                               {shouldRenderButton && (
+                                  <Button type="button" onClick={handleNavigat}>Store</Button>
+                                )}
+
+                                {shouldRenderButton && (
+                                   <ContainerRating>
+                                      <SvgRating>
+                                         <use xlinkHref={sprite + '#icon-star'} />
+                                      </SvgRating>
+                                      <Text>{store.rating}</Text>                        
+                                    </ContainerRating> 
+                                )}  
+
+                                {shouldRenderButton && (
+                                   <TextStatus>Open</TextStatus>     
+                                )}
+
+                            </ContainerButtonRating>
+
+                            {shouldRenderMedicineImages&&(
                                 <>
-                                  <ImgTop src={RectangleTD42214} alt="Image Top" />
-                                  <Img src={RectangleTD42213} alt="Image Middle" />
-                                  <ImgBottom src={RectangleTD42212} alt="Image Bottom" />
-                                </>
+                                <ImgTop src={Rectangle42214} alt="Image Top" />
+                                <Img src={Rectangle42213} alt="Image Middle" />
+                                <ImgBottom src={Rectangle42212} alt="Image Bottom" />
+                            </>
                             )}
+
+                            {shouldRenderButton && (
+                       
+                            <>
+                                <ImgMedecineTop src={RectangleMedicine42214} alt="Image Top" />
+                                <ImgMedecine src={RectangleMedicine42213} alt="Image Middle" />
+                                <ImgMedecineBottom src={RectangleMedicine42212} alt="Image Bottom" />
+                            </>
+                        )}
 
                 </ContainerItem>
             ))}
