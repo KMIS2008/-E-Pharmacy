@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/819.eab45ea3.chunk.js","mappings":"2LAEe,SAASA,IAGpB,OACIC,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GAIR,C","sources":["Pages/MedicinePage/MedicinePage.js"],"sourcesContent":["\n\nexport default function MedicinePage(){\n\n\n    return(\n        <>\n      \n        </>\n    )\n}"],"names":["MedicinePage","_jsx","_Fragment"],"sourceRoot":""}
