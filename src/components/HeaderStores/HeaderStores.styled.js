@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Title=styled.h2`
 margin-top: 40px;
 margin-bottom: 10px;
+padding-left: 20px;
 font-family: Inter;
 font-size: 28px;
 font-weight: 600;
 line-height: 1,14;
-text-align: center;
+text-align: left;
 color: #1D1E21;
 
 @media (min-width: 768px) {
