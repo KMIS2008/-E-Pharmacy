@@ -1,16 +1,17 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import {fetchProductsKeyword} from '../../redux/operations';
 import {ContainerInput,Svg, Input } from './SearchInput.styled';
 import sprite from '../../images/sprite.svg';
 
+
 export const SearchInput=()=>{
     const [searchValue, setSearchValue] = useState("");
+
     const dispatch=useDispatch();
 
     const handleInputChange = (e) => {
         setSearchValue(e.target.value);
-        console.log("Search Value:", e.target.value); 
     };
 
     const handleResetClick = () => {
@@ -19,8 +20,8 @@ export const SearchInput=()=>{
 
     const handleSearch=(evt)=>{
         evt.preventDefault();
-        console.log("Search Value Before Dispatch:", searchValue);
         dispatch(fetchProductsKeyword({ keyword: searchValue, pageNumber:1}));
+        
         handleResetClick()
     }
 
@@ -40,7 +41,7 @@ export const SearchInput=()=>{
                      </Svg>
                      </button>
 
-                </ContainerInput>
+    </ContainerInput>
     
     </>
 }

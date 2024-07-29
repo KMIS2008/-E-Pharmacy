@@ -6,6 +6,7 @@ const allProducts ={
     productId:null,
     currentPage: 1,
     totalPages: 0,
+    message:"",
     isLoading: false,
     error: false, 
 }
@@ -17,6 +18,7 @@ const handlFulfilled = (state, action)=>{
     state.products = action.payload.products;
     state.totalPages = action.payload.totalPages;
     state.currentPage = action.payload.currentPage;
+    state.message=action.payload.message;
     state.isLoading = false;
     state.error = null;
  }
