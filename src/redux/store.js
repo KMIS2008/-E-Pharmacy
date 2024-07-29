@@ -4,6 +4,7 @@ import { authReducer } from "./auth/authSlice";
 import {reviewsReducer} from './rewiesSlice';
 import {nearestReducer} from './nearestSlice';
 import {storesReducer} from './storesSlices';
+import {productsReducer} from './productsSlice';
 
 // import {newsReducer} from './newsSlice';
 // import {noticesReducer} from './noticesSlice';
@@ -35,6 +36,7 @@ export const store = configureStore({
     reviews: reviewsReducer,
     nearest: nearestReducer,
     stores: storesReducer,
+    products:productsReducer,
     // news: newsReducer,
     // notices: noticesReducer,
     // friends: friendReducer,
