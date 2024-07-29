@@ -1,19 +1,25 @@
 import { useForm } from "react-hook-form";
 import Select from 'react-select';
-import {Error, Form, Input, ContainerInput, Svg, Button} from './FilterForm.styled';
+import {Error, Form, Button} from './FilterForm.styled';
 import { nanoid } from "nanoid";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import sprite from '../../images/sprite.svg';
+import { useDispatch } from "react-redux";
+import {getProductsFilter} from '../../redux/operations';
+import {SearchInput} from '../SearchInput/SearchInput';
 
 const SignupSchema = Yup.object().shape({
-    category: Yup.string().required('Required'),
-    name: Yup.string().required('Required'),
+    category: Yup.string(),
+    name: Yup.string(),
 
 });
 
 
 export const FilterForm=()=>{
+
+    const dispatch=useDispatch();
+    
     const customStyles = {
         placeholder: (provided) => ({
           ...provided,
@@ -63,10 +69,9 @@ export const FilterForm=()=>{
       });
 
       const onSubmit = async (data, e) => {
-
         e.preventDefault();
         try {
-            // await dispatch(addPet(data));
+            await dispatch(getProductsFilter(data));
             reset();
         } catch (errors) {
             alert(errors.message)
@@ -99,20 +104,7 @@ export const FilterForm=()=>{
                         />
                   {errors.category && <Error>{errors.category.message}</Error>}
 
-                <ContainerInput>
-                     <Input id="name" 
-                            
-                            placeholder="Search medicine"
-    
-                              {...register('name', {
-                                required: 'Required',
-                            })} />
-                     {errors.name && <Error>{errors.name.message}</Error>}
-
-                     <Svg width={16} height={16}>
-                          <use xlinkHref={sprite + '#icon-search'}/>
-                     </Svg>
-                </ContainerInput>
+                <SearchInput id='name'/>
 
                 <Button type="submit" >
                      <svg width={14} height={14}>
@@ -120,9 +112,7 @@ export const FilterForm=()=>{
                      </svg>
                     Filter
                 </Button>
-                  
-
-        
+                
         </Form>
     )
 }

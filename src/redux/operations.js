@@ -7,6 +7,7 @@ axios.defaults.baseURL = "https://e-pharmacy-backend-1.onrender.com/api";
 const REVIEWS_URL= '/customer-reviews';
 const NEAREST_URL='/stores/nearest'; 
 const STORES_URL='/stores'; 
+const PRODUCT_URL='/products'; 
 
 
 export const fetchreviews = createAsyncThunk('reviews', async(_, thunkAPI)=>{
@@ -65,6 +66,99 @@ export const fetchstores = createAsyncThunk('nearest', async(_, thunkAPI)=>{
         return thunkAPI.rejectWithValue(e.message)
     }
 })
+
+export const fetchproducts = createAsyncThunk('products', async(pageNumber, thunkAPI)=>{
+    try {
+        const response = await axios.get(`${PRODUCT_URL}?page=${pageNumber}&limit=12`);;
+        return response.data;
+        
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
+
+export const fetchIdProducts = createAsyncThunk('products/id', async(_id, thunkAPI)=>{
+    try {
+        const response = await axios.get(`${PRODUCT_URL}/${_id}`);
+        return response.data;
+        
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
+
+export const fetchProductsKeyword = createAsyncThunk('products/keywordNews', async({keyword, pageNumber},thunkAPI) => {
+    try {
+        const response = await axios.get(`${PRODUCT_URL}?keyword=${keyword}&page=${pageNumber}&limit=12`);
+        return response.data;
+    } catch (e) {
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+});
+
+export const getProductsFilter = createAsyncThunk( 'products/filter', 
+    async ({page=1, limit=12, name, category}, thunkApi,) => {
+        
+    const params = new URLSearchParams();
+    params.append('page', page.toString());
+    params.append('limit', limit.toString());
+
+    if (name) {
+      params.append('keyword', name);
+    }
+    if (category) {
+      params.append('category', category);
+    }
+
+    try {
+      const response= await axios.get(`${PRODUCT_URL}?${params.toString()}`);
+      return response.data;
+    } catch (error) {
+        toast.error(`Error: ${error.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+      return thunkApi.rejectWithValue({
+        message: error.message,
+        code: error.response.status,
+      });
+    }
+  },
+);
+
+
 
 //////////////////////////////////////////////
 
