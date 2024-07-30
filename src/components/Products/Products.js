@@ -14,6 +14,10 @@ export const Products=({products})=>{
         navigate('/product')
     }
 
+    const handleAddCart=()=>{
+        navigate('/cart')
+    }
+
     return(
         <>
           <Container>
@@ -25,7 +29,7 @@ export const Products=({products})=>{
                        <Text>৳{product.price}</Text>                
                     </ContainerTitle>
                     <ContainerTitle>
-                        <Button type="button">Add to cart</Button>
+                        <Button type="button" onClick={handleAddCart}>Add to cart</Button>
                         <ButtonDetails type="button" onClick={()=>handlClickIdProduct(product._id)}>Details</ButtonDetails>
                     </ContainerTitle>
 

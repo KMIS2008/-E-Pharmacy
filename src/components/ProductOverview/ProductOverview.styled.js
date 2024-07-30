@@ -135,6 +135,8 @@ justify-content: space-between;
 align-items: center;
 gap:5px;
 
+cursor: pointer;
+
 @media (min-width: 768px) {
     padding-bottom: 20px;
 }
@@ -154,6 +156,8 @@ font-size: 14px;
 font-weight: 500;
 line-height: 1;
 text-align: center;
+
+cursor: pointer;
 
 color: ${p=>p.theme.colors.white};
 `

@@ -4,10 +4,12 @@ import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounte
        Сounter, CounterNumber, Button, ContainerButtons, ContainerInfo
 } from './ProductOverview.styled';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const ProductOverview=()=>{
     const product=useSelector(selectIdProducts);
     const [counter, setCounter] = useState(1); 
+    const navigate=useNavigate();
 
     const handleIncrement = () => {
         setCounter(prevCounter => prevCounter + 1);
@@ -16,6 +18,10 @@ export const ProductOverview=()=>{
     const handleDecrement = () => {
         setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
     };
+
+    const handleAddCart=()=>{
+        navigate('/cart')
+    }
 
 
 if (!product) {
@@ -42,7 +48,7 @@ if (!product) {
                         <Сounter type="button" onClick={handleDecrement}>-</Сounter>
                   </ContainerСounter>  
  
-                  <Button type="button">Add to cart</Button>             
+                  <Button type="button" onClick={handleAddCart}>Add to cart</Button>             
                </ContainerButtons>
            </ContainerInfo>
         </Container>
