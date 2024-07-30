@@ -17,6 +17,10 @@ export const TabsContainer=()=>{
     const {discription, reviews}=product;
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
+    if (!product) {
+        return <div>Loading...</div>; // или другой индикатор загрузки
+    }
+
     const handleDiscription=()=>{
         setDiscription(true);
         setReviews(false)
