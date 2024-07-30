@@ -7,6 +7,10 @@ import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounte
 export const ProductOverview=()=>{
     const product=useSelector(selectIdProducts)
 console.log(product)
+
+if (!product) {
+    return <div>Loading...</div>; // или другой индикатор загрузки
+}
    const{photo, name, price, suppliers} =product;
     return(
         <Container>
