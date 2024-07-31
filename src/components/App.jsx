@@ -12,10 +12,13 @@ import { refreshUser } from 'redux/auth/operations';
 // import { PrivateRoute } from './PrivateRoute';
 
 import { lazy, Suspense  } from 'react';
+
 const Home = lazy(()=> import('Pages/Home/Home'));
 const MedicineStorePage = lazy(()=> import('Pages/MedicineStorePage/MedicineStorePage'));
 const MedicinePage = lazy(()=> import('Pages/MedicinePage/MedicinePage'));
 const ProdactPage = lazy(()=> import('Pages/ProductPage/ProductPage'));
+const CartPage = lazy(()=> import('Pages/CartPage/CartPage'));
+ 
 
 // const Reistr = lazy(()=> import('Pages/Registr/Registr'));
 // const Login = lazy(()=> import ('Pages/Login/Login'));
@@ -59,6 +62,8 @@ const ProdactPage = lazy(()=> import('Pages/ProductPage/ProductPage'));
              <Route path="medicine-store" element={<MedicineStorePage/>}/>
              <Route path="medicine" element={<MedicinePage/>}/>
              <Route path='product' element={<ProdactPage/>}/>
+             <Route path='cart' element={<CartPage/>}/>
+
              
               {/* <Route path="home" element={<Home/>}/> */}
               {/* <Route path="register" element = { <RestrictedRoute redirectTo="/profile" component={<Reistr />} />}/>
