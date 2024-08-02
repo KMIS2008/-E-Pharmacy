@@ -1,12 +1,19 @@
 import {HeaderStores} from '../../components/HeaderStores/HeaderStores';
 import { ShippingInfo } from 'components/ShippingInfo/ShippingInfo';
-import {Container} from './CartPage.styled';
+import {Container, ContainerCart} from './CartPage.styled';
+import {Order} from '../../components/Order/Order';
 
 export default function CartPage(){
     return(
         <Container>
           <HeaderStores title={'Cart'}/>
-          <ShippingInfo/>
+          <ContainerCart>
+             <ShippingInfo/>
+             <Order/>            
+          </ContainerCart>
+
         </Container>
     )
 }
+
+

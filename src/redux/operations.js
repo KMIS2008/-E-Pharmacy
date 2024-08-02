@@ -8,6 +8,7 @@ const REVIEWS_URL= '/customer-reviews';
 const NEAREST_URL='/stores/nearest'; 
 const STORES_URL='/stores'; 
 const PRODUCT_URL='/products'; 
+const CART_URL='/cart';
 
 
 export const fetchreviews = createAsyncThunk('reviews', async(_, thunkAPI)=>{
@@ -157,6 +158,25 @@ export const getProductsFilter = createAsyncThunk( 'products/filter',
     }
   },
 );
+
+export const fetchcart = createAsyncThunk('cart', async(_, thunkAPI)=>{
+    try {
+        const response = await axios.get(`${CART_URL}`);
+        return response.data;
+        
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
 
 
 
