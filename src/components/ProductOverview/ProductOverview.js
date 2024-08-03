@@ -1,15 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {selectIdProducts} from '../../redux/selects';
 import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounter,
        Сounter, CounterNumber, Button, ContainerButtons, ContainerInfo
 } from './ProductOverview.styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { addCart } from 'redux/operations';
+
 
 export const ProductOverview=()=>{
     const product=useSelector(selectIdProducts);
     const [counter, setCounter] = useState(1); 
     const navigate=useNavigate();
+    const dispatch=useDispatch();
 
     const handleIncrement = () => {
         setCounter(prevCounter => prevCounter + 1);
@@ -19,8 +22,10 @@ export const ProductOverview=()=>{
         setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
     };
 
-    const handleAddCart=()=>{
-        navigate('/cart')
+    const handleAddCart=(product)=>{
+        const { id, ...productWithoutId } = product;
+        dispatch(addCart(productWithoutId));
+        navigate('/cart');
     }
 
 
@@ -48,7 +53,7 @@ if (!product) {
                         <Сounter type="button" onClick={handleDecrement}>-</Сounter>
                   </ContainerСounter>  
  
-                  <Button type="button" onClick={handleAddCart}>Add to cart</Button>             
+                  <Button type="button" onClick={()=>handleAddCart(product)}>Add to cart</Button>             
                </ContainerButtons>
            </ContainerInfo>
         </Container>

@@ -15,7 +15,7 @@ export const Products=({products})=>{
     }
 
     const handleAddCart=(product)=>{
-        const { id, discription, reviews, ...productWithoutId } = product;
+        const { id, ...productWithoutId } = product;
         dispatch(addCart(productWithoutId));
         navigate('/cart');
     }
