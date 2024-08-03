@@ -22,7 +22,7 @@ export const Order=()=>{
 
     useEffect(()=>{
         dispatch(fetchcart())
-    })
+    },[dispatch])
 
     return(
         <>

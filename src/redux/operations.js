@@ -178,6 +178,25 @@ export const fetchcart = createAsyncThunk('cart', async(_, thunkAPI)=>{
     }
 })
 
+export const addCart = createAsyncThunk('cart/add', async(data, thunkAPI)=>{
+    try {
+        const response = await axios.post(`${CART_URL}`, data);
+    
+        return response.data;
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
+
 
 
 //////////////////////////////////////////////

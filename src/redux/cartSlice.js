@@ -1,4 +1,4 @@
-import {fetchcart} from './operations';
+import {fetchcart, addCart} from './operations';
 import { createSlice} from '@reduxjs/toolkit';
 
 const allOrders ={
@@ -16,6 +16,12 @@ const handlFulfilled = (state, action)=>{
     state.error = null;
  }
 
+ const handlFulfilledAdd = (state, action)=>{
+    state.orders.push(action.payload);
+    state.isLoading = false;
+    state.error = null;
+  }
+
 const handlReject =(state, action)=>{
     state.isLoading = false;
     state.error = action.payload;
@@ -30,6 +36,9 @@ const orderSlice = createSlice({
         builder.addCase(fetchcart.pending, handlPending)
         .addCase(fetchcart.fulfilled, handlFulfilled)
         .addCase(fetchcart.rejected, handlReject)
+        .addCase(addCart.pending, handlPending)
+        .addCase(addCart.fulfilled, handlFulfilledAdd)
+        .addCase(addCart.rejected, handlReject)
        }
 })
 
