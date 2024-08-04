@@ -14,7 +14,7 @@ export const TabsContainer=()=>{
     const [isDiscription, setDiscription]=useState(false);
     const [isReviews, setReviews]=useState(false);
     const product=useSelector(selectIdProducts);
-    const {discription, reviews}=product;
+    // const {discription, reviews}=product;
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
     if (!product) {
@@ -40,18 +40,18 @@ export const TabsContainer=()=>{
           </Container>   
 
           {isDiscription&&(<ContainerDiscription>
-          <TextAbout>{discription.about}</TextAbout>
-          <Text><Span>Medicinal Uses: Antioxidant Properties: </Span>{discription.MedicinalUses}</Text>
-          <Text><Span>Anti-Diabetic Effects: </Span>{discription.AntiDiabeticEffects}</Text>
-          <Text><Span>Heart Health: </Span>{discription.HeartHealth}</Text>
-          <Text><Span>Anti-Cancer Properties: </Span>{discription.AntiCancerProperties}</Text>
-          <Text><Span>ImmuneSupport: </Span>{discription.ImmuneSupport}</Text>
-          <Text><Span>DigestiveAid: </Span>{discription.DigestiveAid}</Text>
+          <TextAbout>{product.discription.about}</TextAbout>
+          <Text><Span>Medicinal Uses: Antioxidant Properties: </Span>{product.discription.MedicinalUses}</Text>
+          <Text><Span>Anti-Diabetic Effects: </Span>{product.discription.AntiDiabeticEffects}</Text>
+          <Text><Span>Heart Health: </Span>{product.discription.HeartHealth}</Text>
+          <Text><Span>Anti-Cancer Properties: </Span>{product.discription.AntiCancerProperties}</Text>
+          <Text><Span>ImmuneSupport: </Span>{product.discription.ImmuneSupport}</Text>
+          <Text><Span>DigestiveAid: </Span>{product.discription.DigestiveAid}</Text>
           </ContainerDiscription>
             )}  
 
           {isReviews&&(<ContainerReveiws>
-            {reviews.map(review=>(
+            {product.reviews.map(review=>(
                 <ContainerList key={nanoid()}>
                     <ContainerReviewsInfo>
                         <Img src={review.photo} alt='avatar'/>

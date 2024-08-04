@@ -24,7 +24,8 @@ export const ProductOverview=()=>{
 
     const handleAddCart=(product)=>{
         const { id, ...productWithoutId } = product;
-        dispatch(addCart(productWithoutId));
+        const productWithQuantity = { ...productWithoutId, quantity: 1 };
+        dispatch(addCart(productWithQuantity));
         navigate('/cart');
     }
 
