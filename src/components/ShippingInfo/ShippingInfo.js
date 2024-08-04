@@ -4,6 +4,8 @@ import {Title, Container, Text, Label, Input, Line, RadioInput,RadioGroup, Radio
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import {selectIdOrders} from '../../redux/selects';
+import { useSelector } from 'react-redux';
 
 
 const SignupSchema = Yup.object().shape({
@@ -22,6 +24,15 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const ShippingInfo=()=>{
+    const orders=useSelector(selectIdOrders);
+
+    const calculateTotalPrice = (orders) => {
+        return orders.reduce((total, order) => {
+            return total + parseFloat(order.price); // Преобразуем значение price в число и добавляем к общему
+        }, 0);
+    };
+
+    const totalPrice = calculateTotalPrice(orders);
 
     const { register, handleSubmit, reset, } = useForm({
         resolver: yupResolver(SignupSchema),
@@ -112,7 +123,7 @@ export const ShippingInfo=()=>{
 
             <ContainerTotal>
                 <TextTotal>Total:</TextTotal>
-                <TextTotal>৳ 122.00</TextTotal>
+                <TextTotal>৳ {totalPrice}</TextTotal>
             </ContainerTotal>
 
             <Button type='submit'>Place order</Button>
