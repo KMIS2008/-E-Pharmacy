@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchcart} from '../../redux/operations';
+import {fetchcart, deleteCart} from '../../redux/operations';
 import {selectIdOrders} from '../../redux/selects';
 import { useEffect, useState } from 'react';
 import {ContainerList, ContainerItem, Img, ContainerСounter,ContainerTitle, Сounter, 
@@ -19,6 +19,10 @@ export const Order=()=>{
     const handleDecrement = () => {
         setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
     };
+
+    const handleDeleteCart=(_id)=>{
+        dispatch(deleteCart(_id))
+    }
 
     useEffect(()=>{
         dispatch(fetchcart())
@@ -46,7 +50,7 @@ export const Order=()=>{
                               <Сounter type="button" onClick={handleDecrement}>-</Сounter>
                            </ContainerСounter>  
 
-                           <ButtonRemove type='button'>Remove</ButtonRemove>
+                           <ButtonRemove type='button' onClick={()=>handleDeleteCart(order._id)}>Remove</ButtonRemove>
 
                         </ContainerButton>
                     </ContainerInfo>

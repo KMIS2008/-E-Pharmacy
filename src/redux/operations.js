@@ -197,6 +197,14 @@ export const addCart = createAsyncThunk('cart/add', async(data, thunkAPI)=>{
     }
 })
 
+export const deleteCart = createAsyncThunk("cart/deleteCart", async(_id, thunkAPI)=>{
+    try {
+        const response = await axios.delete(`${CART_URL}/${_id}`);
+        return response.data;
+    } catch (e) {
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
 
 
 //////////////////////////////////////////////
