@@ -3,7 +3,7 @@ import {selectIdProducts} from '../../redux/selects';
 import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounter,
        Сounter, CounterNumber, Button, ContainerButtons, ContainerInfo
 } from './ProductOverview.styled';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addCart } from 'redux/operations';
 import {updateCartQuantity} from '../../redux/operations';
@@ -11,7 +11,7 @@ import {updateCartQuantity} from '../../redux/operations';
 
 export const ProductOverview=()=>{
     const product=useSelector(selectIdProducts);
-    const [counter, setCounter] = useState(1); 
+    // const [counter, setCounter] = useState(1); 
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
