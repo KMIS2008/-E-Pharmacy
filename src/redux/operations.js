@@ -206,6 +206,15 @@ export const deleteCart = createAsyncThunk("cart/deleteCart", async(_id, thunkAP
     }
 })
 
+export const updateCartQuantity = createAsyncThunk('cart/update', async ({ _id, quantity }, thunkAPI) => {
+    try {
+        const response = await axios.put(`${CART_URL}/update`, { _id, quantity: Number(quantity) });
+        return response.data;
+    } catch (e) {
+        return thunkAPI.rejectWithValue(e.message);
+    }
+});
+
 
 //////////////////////////////////////////////
 

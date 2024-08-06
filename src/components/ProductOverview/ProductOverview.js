@@ -6,6 +6,7 @@ import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounte
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addCart } from 'redux/operations';
+import {updateCartQuantity} from '../../redux/operations';
 
 
 export const ProductOverview=()=>{
@@ -14,13 +15,26 @@ export const ProductOverview=()=>{
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
-    const handleIncrement = () => {
-        setCounter(prevCounter => prevCounter + 1);
+    // const handleIncrement = () => {
+    //     setCounter(prevCounter => prevCounter + 1);
+    // };
+
+    // const handleDecrement = () => {
+    //     setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
+    // };
+
+    const handleIncrement = (order) => {
+        const newQuantity = (order.quantity || 1) + 1;
+        dispatch(updateCartQuantity({ _id: order._id, quantity: newQuantity }));
     };
 
-    const handleDecrement = () => {
-        setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
+    const handleDecrement = (order) => {
+        const newQuantity = (order.quantity || 1) - 1;
+        if (newQuantity > 0) {
+            dispatch(updateCartQuantity({ _id: order._id, quantity: newQuantity }));
+        }
     };
+
 
     const handleAddCart=(product)=>{
         const { id, ...productWithoutId } = product;
@@ -33,7 +47,7 @@ export const ProductOverview=()=>{
 if (!product) {
     return <div>Loading...</div>; // или другой индикатор загрузки
 }
-   const{photo, name, price, suppliers} =product;
+   const{photo, name, price, suppliers, quantity} =product;
     return(
         <Container>
            <Img src={photo} alt='drug'/>
@@ -49,9 +63,9 @@ if (!product) {
                
                <ContainerButtons>
                   <ContainerСounter>
-                        <Сounter type="button" onClick={handleIncrement}>+</Сounter>
-                        <CounterNumber>{counter}</CounterNumber>
-                        <Сounter type="button" onClick={handleDecrement}>-</Сounter>
+                        <Сounter type="button"onClick={() => handleIncrement(product)}>+</Сounter>
+                        <CounterNumber>{quantity|| 1}</CounterNumber>
+                        <Сounter type="button" onClick={() => handleDecrement(product)}>-</Сounter>
                   </ContainerСounter>  
  
                   <Button type="button" onClick={()=>handleAddCart(product)}>Add to cart</Button>             
