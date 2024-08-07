@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchcart, deleteCart} from '../../redux/operations';
+import {fetchcart, deleteCart, updateCartQuantity} from '../../redux/operations';
 import {selectIdOrders} from '../../redux/selects';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {ContainerList, ContainerItem, Img, ContainerСounter,ContainerTitle, Сounter, 
     CounterNumber, ButtonRemove, ContainerButton, Title, Text, Price,
     ContainerInfo, Line} from './Order.styled';
@@ -10,19 +10,22 @@ import {ContainerList, ContainerItem, Img, ContainerСounter,ContainerTitle, Сo
 export const Order=()=>{
     const orders =useSelector(selectIdOrders);
     const dispatch=useDispatch();
-    const [counter, setCounter] = useState(1); 
-
-    const handleIncrement = () => {
-        setCounter(prevCounter => prevCounter + 1);
-    };
-
-    const handleDecrement = () => {
-        setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
-    };
 
     const handleDeleteCart=(_id)=>{
         dispatch(deleteCart(_id))
     }
+
+        const handleIncrement = (order) => {
+        const newQuantity = (order.quantity || 1) + 1;
+        dispatch(updateCartQuantity({ _id: order._id, quantity: newQuantity }));
+    };
+
+    const handleDecrement = (order) => {
+        const newQuantity = (order.quantity || 1) - 1;
+        if (newQuantity > 0) {
+            dispatch(updateCartQuantity({ _id: order._id, quantity: newQuantity }));
+        }
+    };
 
     useEffect(()=>{
         dispatch(fetchcart())
@@ -45,9 +48,9 @@ export const Order=()=>{
                         </ContainerTitle>
                         <ContainerButton>
                            <ContainerСounter>
-                              <Сounter type="button" onClick={handleIncrement}>+</Сounter>
-                              <CounterNumber>{counter}</CounterNumber>
-                              <Сounter type="button" onClick={handleDecrement}>-</Сounter>
+                              <Сounter type="button" onClick={() => handleIncrement(order)}>+</Сounter>
+                              <CounterNumber>{order.quantity}</CounterNumber>
+                              <Сounter type="button" onClick={() => handleDecrement(order)}>-</Сounter>
                            </ContainerСounter>  
 
                            <ButtonRemove type='button' onClick={()=>handleDeleteCart(order._id)}>Remove</ButtonRemove>

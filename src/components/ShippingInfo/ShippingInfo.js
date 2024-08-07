@@ -27,9 +27,11 @@ export const ShippingInfo=()=>{
     const orders=useSelector(selectIdOrders);
 
     const calculateTotalPrice = (orders) => {
-        return orders.reduce((total, order) => {
-            return total + parseFloat(order.price); // Преобразуем значение price в число и добавляем к общему
+        const total = orders.reduce((sum, order) => {
+            return sum + parseFloat(order.price) * parseFloat(order.quantity);
         }, 0);
+    
+        return parseFloat(total.toFixed(2));
     };
 
     const totalPrice = calculateTotalPrice(orders);
