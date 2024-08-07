@@ -1,8 +1,9 @@
-import {fetchcart, addCart, deleteCart, updateCartQuantity} from './operations';
+import {fetchcart, addCart, deleteCart, updateCartQuantity, addCartFinish} from './operations';
 import { createSlice} from '@reduxjs/toolkit';
 
 const allOrders ={
     orders:[],
+    finishorders:[],
     isLoading: false,
     error: false, 
 }
@@ -35,6 +36,12 @@ const handlFulfilled = (state, action)=>{
         state.error = null;
     };
 
+    const handlFulfilledAddFinish = (state, action)=>{
+        state.finishorders.push(action.payload);
+        state.isLoading = false;
+        state.error = null;
+      }
+
 const handlReject =(state, action)=>{
     state.isLoading = false;
     state.error = action.payload;
@@ -57,7 +64,10 @@ const orderSlice = createSlice({
         .addCase(deleteCart.rejected, handlReject)
         .addCase(updateCartQuantity.pending, handlPending)
         .addCase(updateCartQuantity.fulfilled, handlFulfilledUpdate)
-        .addCase(updateCartQuantity.rejected, handlReject);
+        .addCase(updateCartQuantity.rejected, handlReject)
+        .addCase(addCartFinish.pending, handlPending)
+        .addCase(addCartFinish.fulfilled, handlFulfilledAddFinish)
+        .addCase(addCartFinish.rejected, handlReject)
        }
 })
 

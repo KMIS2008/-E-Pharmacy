@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {selectIdOrders} from '../../redux/selects';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {addCartFinish} from '../../redux/operations';
+import { nanoid } from 'nanoid';
 
 
 const SignupSchema = Yup.object().shape({
-    name: Yup.string().required('Required'),
+    namecustomer: Yup.string().required('Required'),
 
     email: Yup.string().email("Email must contain @")
     .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,'Enter a valid Email')
@@ -25,6 +27,7 @@ const SignupSchema = Yup.object().shape({
 
 export const ShippingInfo=()=>{
     const orders=useSelector(selectIdOrders);
+    const dispatch=useDispatch();
 
     const calculateTotalPrice = (orders) => {
         const total = orders.reduce((sum, order) => {
@@ -40,14 +43,19 @@ export const ShippingInfo=()=>{
         resolver: yupResolver(SignupSchema),
       });
 
-    const onSubmit = async (data, e) => {
-        e.preventDefault();
+      const onSubmit = async (data, e) => {
+        const _id=nanoid();
+        
+        const payload = {
+            ...data,
+            orders, 
+            _id
+        };
         try {
-            // await dispatch(registr(data));
+            await dispatch(addCartFinish(payload));
             reset();
-        }  
-        catch (errors) {
-            alert(errors.message)
+        } catch (errors) {
+            alert(errors.message);
         }
     };
 
@@ -60,9 +68,9 @@ export const ShippingInfo=()=>{
              <Label>
               <LabelText>Name</LabelText>
                 <Input
-                    id="name"
+                    id="namecustomer"
                     placeholder="Enter text"
-                    {...register('name')}
+                    {...register('namecustomer')}
                  />
            </Label>
 

@@ -216,6 +216,26 @@ export const updateCartQuantity = createAsyncThunk('cart/update', async ({ _id, 
 });
 
 
+export const addCartFinish = createAsyncThunk('cart/addcheckout', async(data, thunkAPI)=>{
+    try {
+        const response = await axios.post(`${CART_URL}/checkout`, data);
+    
+        return response.data;
+    } catch (e){
+        toast.error(`Error: ${e.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, 
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        return thunkAPI.rejectWithValue(e.message)
+    }
+})
+
+
 //////////////////////////////////////////////
 
 // export const fetchnews = createAsyncThunk('news/allNews', async(pageNumber, thunkAPI)=>{

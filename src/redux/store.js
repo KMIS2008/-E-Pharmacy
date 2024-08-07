@@ -39,6 +39,7 @@ export const store = configureStore({
     stores: storesReducer,
     products: productsReducer,
     orders: orderReducer,
+    finishorders:orderReducer,
     // user: userReducer,
   },
   
