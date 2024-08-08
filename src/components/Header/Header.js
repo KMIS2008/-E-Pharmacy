@@ -62,7 +62,7 @@ export const Header = () => {
           </Svg>
         )} 
         
-        {(!isHome && isTablet) && (
+        {((isMedicine||isStore||isProduct)&& isTablet) && (
           <Svg onClick={handleBurgerMenu}>
             <use xlinkHref={sprite + '#icon-burgermenu-green'} />
           </Svg>
