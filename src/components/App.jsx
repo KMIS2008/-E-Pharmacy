@@ -18,9 +18,8 @@ const MedicineStorePage = lazy(()=> import('Pages/MedicineStorePage/MedicineStor
 const MedicinePage = lazy(()=> import('Pages/MedicinePage/MedicinePage'));
 const ProdactPage = lazy(()=> import('Pages/ProductPage/ProductPage'));
 const CartPage = lazy(()=> import('Pages/CartPage/CartPage'));
- 
+const RegisterPage= lazy(()=> import('Pages/RegisterPage/RegisterPage'));
 
-// const Reistr = lazy(()=> import('Pages/Registr/Registr'));
 // const Login = lazy(()=> import ('Pages/Login/Login'));
 // const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
 
@@ -63,6 +62,7 @@ const CartPage = lazy(()=> import('Pages/CartPage/CartPage'));
              <Route path="medicine" element={<MedicinePage/>}/>
              <Route path='product' element={<ProdactPage/>}/>
              <Route path='cart' element={<CartPage/>}/>
+             <Route path='register' element={<RegisterPage/>}/>
 
              
               {/* <Route path="home" element={<Home/>}/> */}
