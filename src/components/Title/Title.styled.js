@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container=styled.div`
 position: relative;
 padding-top: 50px;
+margin-bottom: 20px;
 
 @media (min-width: 768px) {
     padding-top: 100px;

@@ -11,6 +11,7 @@ import {Footer} from '../Footer/Footer';
     const isMedicine = location.pathname === '/medicine';
     const isStore = location.pathname === '/medicine-store'; 
     const isProduct = location.pathname === '/product';
+    const isMain=location.pathname==='/';
     
     return (
         <Contater>
@@ -20,7 +21,7 @@ import {Footer} from '../Footer/Footer';
                       <Outlet />
                    </Suspense>
                 </main>   
-           {(isHome||isMedicine||isStore||isProduct) && <Footer/>}
+           {(isMain||isHome||isMedicine||isStore||isProduct) && <Footer/>}
         </Contater>
     )
 }

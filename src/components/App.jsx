@@ -19,8 +19,8 @@ const MedicinePage = lazy(()=> import('Pages/MedicinePage/MedicinePage'));
 const ProdactPage = lazy(()=> import('Pages/ProductPage/ProductPage'));
 const CartPage = lazy(()=> import('Pages/CartPage/CartPage'));
 const RegisterPage= lazy(()=> import('Pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(()=> import ('Pages/LoginPage/LoginPage'));
 
-// const Login = lazy(()=> import ('Pages/Login/Login'));
 // const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
 
     export const App =()=> {
@@ -63,6 +63,7 @@ const RegisterPage= lazy(()=> import('Pages/RegisterPage/RegisterPage'));
              <Route path='product' element={<ProdactPage/>}/>
              <Route path='cart' element={<CartPage/>}/>
              <Route path='register' element={<RegisterPage/>}/>
+             <Route path='login' element={<LoginPage/>}/>
 
              
               {/* <Route path="home" element={<Home/>}/> */}
