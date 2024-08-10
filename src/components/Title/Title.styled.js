@@ -7,6 +7,10 @@ margin-bottom: 20px;
 
 @media (min-width: 768px) {
     padding-top: 100px;
+    margin-bottom: 50px;
+}
+@media (min-width: 1440px) {
+    width: 50%;
 }
 `
 
