@@ -3,6 +3,8 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from "react-router-dom";
 import {Container, ContainerInput, Input, ContainerNavigate, Button, Navigate} from './Login.styled';
+import {logIn} from '../../redux/auth/operations';
+import { useDispatch } from "react-redux";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Email must contait @").required('Required'),
@@ -10,7 +12,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const LoginForm=()=>{
-  
+            const dispatch=useDispatch();
             const navigate=useNavigate();
          
             const handleNavigate=()=>{
@@ -26,8 +28,9 @@ export const LoginForm=()=>{
          
                const onSubmit = async (data, e) => {
                  e.preventDefault();
+                 
                  try {
-                     // await dispatch(getProductsFilter(data));
+                     await dispatch(logIn(data));
                      reset();
                  } catch (errors) {
                      alert(errors.message)
@@ -50,7 +53,7 @@ export const LoginForm=()=>{
                   </ContainerInput>
          
                   <ContainerNavigate>
-                       <Button type="submit" >Register</Button>
+                       <Button type="submit" >Log in</Button>
                        {/* {error && <Error>{error}</Error>} */}
          
                        <Navigate onClick={handleNavigate}>Don't have an account?</Navigate>
