@@ -30,6 +30,7 @@ cursor: pointer;
 
 export const Input=styled.input`
 margin-bottom: ${p=>p.theme.spacing(1)};
+padding-left: ${p=>p.theme.spacing(4)};
 width: 100%;
 height: 44px;
 border-radius: 60px;

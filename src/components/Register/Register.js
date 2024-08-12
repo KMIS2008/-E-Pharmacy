@@ -3,6 +3,8 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import{Button,Input, Navigate, ContainerInput, ContainerNavigate , Container } from './Register.styled';
 import { useNavigate } from "react-router-dom";
+import {registr} from '../../redux/auth/operations';
+import { useDispatch } from "react-redux";
 
 
 const SignupSchema = Yup.object().shape({
@@ -13,6 +15,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const RegisterForm=()=>{
+   const dispatch=useDispatch();
    const navigate=useNavigate();
 
    const handleNavigate=()=>{
@@ -29,7 +32,7 @@ export const RegisterForm=()=>{
       const onSubmit = async (data, e) => {
         e.preventDefault();
         try {
-            // await dispatch(getProductsFilter(data));
+            await dispatch(registr(data));
             reset();
         } catch (errors) {
             alert(errors.message)
