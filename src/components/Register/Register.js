@@ -5,6 +5,7 @@ import{Button,Input, Navigate, ContainerInput, ContainerNavigate , Container } f
 import { useNavigate } from "react-router-dom";
 import {registr} from '../../redux/auth/operations';
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 
 const SignupSchema = Yup.object().shape({
@@ -14,13 +15,18 @@ const SignupSchema = Yup.object().shape({
     phone: Yup.string(),
 });
 
-export const RegisterForm=()=>{
+export const RegisterForm=({isModal=false})=>{
    const dispatch=useDispatch();
    const navigate=useNavigate();
+   const [isLoginModal, setLoginModal]=useState(false);
 
    const handleNavigate=()=>{
-
-    navigate('/login')
+    if (isModal)
+   { navigate('/login')}
+    else {
+        setLoginModal(true)
+    }
+    
    }
 
     const { register, handleSubmit,
@@ -40,8 +46,8 @@ export const RegisterForm=()=>{
     };
     return (
 
-        <Container onSubmit={handleSubmit(onSubmit)}>
-         <ContainerInput>
+        <Container onSubmit={handleSubmit(onSubmit)} $isModal={isModal}>
+         <ContainerInput $isModal={isModal}>
             <Input 
                   id = "name" 
                   placeholder='User Name' 
