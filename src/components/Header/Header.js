@@ -5,6 +5,9 @@ import sprite from '../../images/sprite.svg';
 import { useEffect, useState } from 'react';
 import { Burgermenu } from 'components/Burgermenu/Burgermenu';
 import { NavigationLinks } from 'components/NavigationLinks/NavigationLinks';
+import {selectIdOrders} from '../../redux/selects';
+import { useSelector } from 'react-redux';
+
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +15,8 @@ export const Header = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const orders = useSelector(selectIdOrders);
+  const numberOfOrders = orders.length;
 
   const isHome = location.pathname === '/home';
   const isMedicine = location.pathname === '/medicine';
@@ -52,7 +57,7 @@ export const Header = () => {
             <svg width={16} height={16} onClick={handleNavigate}>
               <use xlinkHref={sprite + '#icon-shopping-cart'} />
             </svg>
-            <CounterCarts>0</CounterCarts>
+            <CounterCarts>{numberOfOrders}</CounterCarts>
           </ContainerSvgCart>
         )}
         
