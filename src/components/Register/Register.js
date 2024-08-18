@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import {registr} from '../../redux/auth/operations';
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import {LoginModal} from '../LoginModal/LoginModal';
 
 
 const SignupSchema = Yup.object().shape({
@@ -15,18 +16,17 @@ const SignupSchema = Yup.object().shape({
     phone: Yup.string(),
 });
 
-export const RegisterForm=({isModal=false})=>{
+export const RegisterForm=({isModal, setOpenRegisterModal})=>{
    const dispatch=useDispatch();
    const navigate=useNavigate();
    const [isLoginModal, setLoginModal]=useState(false);
 
-   const handleNavigate=()=>{
-    if (isModal)
+   const handleNavigate=async()=>{
+    if (!isModal)
    { navigate('/login')}
     else {
-        setLoginModal(true)
+        setLoginModal(true);
     }
-    
    }
 
     const { register, handleSubmit,
@@ -76,7 +76,7 @@ export const RegisterForm=({isModal=false})=>{
               <Navigate onClick={handleNavigate}>Already have an account?</Navigate>
          </ContainerNavigate>
 
-      
+        <LoginModal isLoginModal={isLoginModal} setLoginModal={setLoginModal} isModal={isModal} setOpenRegisterModal={setOpenRegisterModal}/>
       </Container>   
       );
 }

@@ -11,14 +11,16 @@ const SignupSchema = Yup.object().shape({
     password: Yup.string().min(6, "Password contain min 6 symbols").required('Required'),
 });
 
-export const LoginForm=()=>{
+export const LoginForm=({isModal, setLoginModal})=>{
             const dispatch=useDispatch();
             const navigate=useNavigate();
-         
-            const handleNavigate=()=>{
-         
-             navigate('/register')
-            }
+
+            const handleNavigate=async()=>{
+                if (!isModal)
+                    navigate('/register')
+                else {
+                    setLoginModal(false);
+                }}
          
              const { register, handleSubmit,
                  //  setValue, formState: { errors },
@@ -38,8 +40,8 @@ export const LoginForm=()=>{
              };
              return (
          
-                 <Container onSubmit={handleSubmit(onSubmit)}>
-                  <ContainerInput>
+                 <Container onSubmit={handleSubmit(onSubmit)} $isModal={isModal}>
+                  <ContainerInput $isModal={isModal}>
                    
                       <Input type="email"
                              id = "email" 

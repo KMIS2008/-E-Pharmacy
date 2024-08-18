@@ -22,10 +22,6 @@ cursor: pointer;
 &:hover{
     background: #3F945F;
 }
-
-/* @media (min-width: 768px) {
-    width: 280px;
-} */
 `
 
 export const Input=styled.input`

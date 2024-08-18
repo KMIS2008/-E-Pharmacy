@@ -1,13 +1,12 @@
 import Modal from "react-modal";
 import sprite from '../../images/sprite.svg';
-import {Container, SvgButton, Title, Text} from './RegisterModal.styled';
-import { RegisterForm } from "components/Register/Register";
 import { useEffect, useState } from "react";
-// import {LoginModal} from '../LoginModal/LoginModal';
+import {Container, SvgButton, Title, Text} from './LoginModal.styled';
+import {LoginForm} from '../Login/login';
 
 Modal.setAppElement('#modal');
 
-export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal})=>{
+export const LoginModal=({isLoginModal, setLoginModal, isModal, setOpenRegisterModal})=>{
 
     const [customStyles, setCustomStyles] = useState(getCustomStyles());
 
@@ -23,7 +22,6 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
           mediaQuery.removeEventListener('change', handleResize);
       };
   }, []);
-
 
   function getCustomStyles() {
     if (window.matchMedia('(max-width: 768px)').matches) { // Якщо екран менше або дорівнює 768px
@@ -68,11 +66,11 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
 }
 
     return(
-     <>
-     <Modal   
-          isOpen={isOpenRegisterModal}
+    
+        <Modal   
+          isOpen={isLoginModal}
           onRequestClose={() => {
-            setOpenRegisterModal(false);
+            setLoginModal(false);
           }}
                
           style={customStyles}
@@ -81,7 +79,7 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
             <Container>
                 <SvgButton
                   onClick={() => {
-                    setOpenRegisterModal(false);
+                    setLoginModal(false);
                 }}>
                 <svg width= '24px' height='24px'>
                   <use xlinkHref={sprite + '#icon-x'} />
@@ -89,11 +87,10 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
                 </SvgButton>
             </Container>
 
-            <Title>Sign Up</Title>
-            <Text>Before proceeding, please register on our site.</Text>
-            <RegisterForm isModal={isModal} setOpenRegisterModal={setOpenRegisterModal}/>
+            <Title>Log in to your account</Title>
+            <Text>Please login to your account before continuing.</Text>
+            <LoginForm isModal={isModal} setLoginModal= {setLoginModal} setOpenRegisterModal={setOpenRegisterModal}/>
+  
         </Modal> 
-     </>
-      
     )
 }
