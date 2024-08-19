@@ -29,22 +29,10 @@ font-family: Manrope;
 font-size: 120px;
 font-weight: 800;
 line-height: 1;
-color: ${p=>p.theme.colors.white};
+color: ${p=>p.theme.colors.green};
 
 @media (min-width: 768px) {
     font-size: 300px;
-}
-`
-
-export const Img = styled.img`
-width: 109px;
-height: 109px;
-border-radius: 50%;
-background: #FFFFFF1A;
-
-@media (min-width: 768px) {
-    width: 300px;
-    height: 300px;
 }
 `
 
@@ -54,7 +42,7 @@ font-size: 16px;
 font-weight: 700;
 line-height: 1,25;
 letter-spacing: -0.03em;
-color:  ${p=>p.theme.colors.white};
+color:  ${p=>p.theme.colors.green};
 
 @media (min-width: 768px) {
     font-size: 24px;
@@ -72,9 +60,9 @@ font-size: 14px;
 font-weight: 700;
 line-height: 1,29;
 letter-spacing: -0.03em;
-color: ${p=>p.theme.colors.yellow};
+color: ${p=>p.theme.colors.black};
 
-background: ${p=>p.theme.colors.white};
+background: ${p=>p.theme.colors.green};
 
 @media (min-width: 768px) {
     width: 162px;
