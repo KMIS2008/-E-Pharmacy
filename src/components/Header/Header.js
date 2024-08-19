@@ -5,6 +5,7 @@ import sprite from '../../images/sprite.svg';
 import { useEffect, useState } from 'react';
 import { Burgermenu } from 'components/Burgermenu/Burgermenu';
 import { NavigationLinks } from 'components/NavigationLinks/NavigationLinks';
+import { AuthenticationLinks } from 'components/AuthenticationLinks/AuthenticationLinks';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +68,10 @@ export const Header = () => {
             <use xlinkHref={sprite + '#icon-burgermenu-green'} />
           </Svg>
         )}
+
+        {!isTablet&&<AuthenticationLinks/>}
+
+
       </ContainerNavigate>
 
       {isOpen && <Burgermenu onClose={handleBurgerMenu} />}
