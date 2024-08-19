@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container=styled.form`
 @media (min-width: 1440px) {
-    width: 50%;
+    width: ${(p) => (p.$isModal ? '100%' : '50%')};
 }
 `
 
@@ -30,6 +30,7 @@ cursor: pointer;
 
 export const Input=styled.input`
 margin-bottom: ${p=>p.theme.spacing(1)};
+padding-left: ${p=>p.theme.spacing(4)};
 width: 100%;
 height: 44px;
 border-radius: 60px;
@@ -60,11 +61,11 @@ cursor: pointer;
 
 export const ContainerInput=styled.div`
 @media (min-width: 768px) {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:${p=>p.theme.spacing(2)};
+    display: ${(p) => (p.$isModal ? 'block' : 'grid')};
+    grid-template-columns: ${(p) => (p.$isModal ? 'initial' : 'repeat(2, 1fr)')};
+    gap: ${(p) => (p.$isModal ? 'initial' : p.theme.spacing(2))};
 
-    margin-bottom: ${p=>p.theme.spacing(12)};
+    margin-bottom: ${(p) => (p.$isModal ? p.theme.spacing(4) : p.theme.spacing(12))};
 }
 `
 

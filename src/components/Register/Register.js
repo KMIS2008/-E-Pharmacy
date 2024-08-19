@@ -3,6 +3,10 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import{Button,Input, Navigate, ContainerInput, ContainerNavigate , Container } from './Register.styled';
 import { useNavigate } from "react-router-dom";
+import {registr} from '../../redux/auth/operations';
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import {LoginModal} from '../LoginModal/LoginModal';
 
 
 const SignupSchema = Yup.object().shape({
@@ -12,12 +16,17 @@ const SignupSchema = Yup.object().shape({
     phone: Yup.string(),
 });
 
-export const RegisterForm=()=>{
+export const RegisterForm=({isModal, setOpenRegisterModal})=>{
+   const dispatch=useDispatch();
    const navigate=useNavigate();
+   const [isLoginModal, setLoginModal]=useState(false);
 
-   const handleNavigate=()=>{
-
-    navigate('/login')
+   const handleNavigate=async()=>{
+    if (!isModal)
+   { navigate('/login')}
+    else {
+        setLoginModal(true);
+    }
    }
 
     const { register, handleSubmit,
@@ -29,7 +38,7 @@ export const RegisterForm=()=>{
       const onSubmit = async (data, e) => {
         e.preventDefault();
         try {
-            // await dispatch(getProductsFilter(data));
+            await dispatch(registr(data));
             reset();
         } catch (errors) {
             alert(errors.message)
@@ -37,8 +46,8 @@ export const RegisterForm=()=>{
     };
     return (
 
-        <Container onSubmit={handleSubmit(onSubmit)}>
-         <ContainerInput>
+        <Container onSubmit={handleSubmit(onSubmit)} $isModal={isModal}>
+         <ContainerInput $isModal={isModal}>
             <Input 
                   id = "name" 
                   placeholder='User Name' 
@@ -67,7 +76,7 @@ export const RegisterForm=()=>{
               <Navigate onClick={handleNavigate}>Already have an account?</Navigate>
          </ContainerNavigate>
 
-      
+        <LoginModal isLoginModal={isLoginModal} setLoginModal={setLoginModal} isModal={isModal} setOpenRegisterModal={setOpenRegisterModal}/>
       </Container>   
       );
 }
