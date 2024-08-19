@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.ec8ffcdd.css",
-    "main.js": "/E-Pharmacy/static/js/main.dcecfb87.js",
+    "main.js": "/E-Pharmacy/static/js/main.4fd32d6a.js",
     "static/js/114.9ccf65ac.chunk.js": "/E-Pharmacy/static/js/114.9ccf65ac.chunk.js",
     "static/js/793.fecafb83.chunk.js": "/E-Pharmacy/static/js/793.fecafb83.chunk.js",
     "static/js/397.e204a99a.chunk.js": "/E-Pharmacy/static/js/397.e204a99a.chunk.js",
@@ -9,6 +9,7 @@
     "static/js/128.04beb6d0.chunk.js": "/E-Pharmacy/static/js/128.04beb6d0.chunk.js",
     "static/js/73.23b70e9a.chunk.js": "/E-Pharmacy/static/js/73.23b70e9a.chunk.js",
     "static/js/457.d30c3374.chunk.js": "/E-Pharmacy/static/js/457.d30c3374.chunk.js",
+    "static/js/677.596ea658.chunk.js": "/E-Pharmacy/static/js/677.596ea658.chunk.js",
     "static/js/586.7d887fbd.chunk.js": "/E-Pharmacy/static/js/586.7d887fbd.chunk.js",
     "static/js/948.91e95669.chunk.js": "/E-Pharmacy/static/js/948.91e95669.chunk.js",
     "static/js/921.9def6766.chunk.js": "/E-Pharmacy/static/js/921.9def6766.chunk.js",
@@ -43,7 +44,7 @@
     "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.31a718b0f9e37ad3652158ba2a01a379.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.ec8ffcdd.css.map": "/E-Pharmacy/static/css/main.ec8ffcdd.css.map",
-    "main.dcecfb87.js.map": "/E-Pharmacy/static/js/main.dcecfb87.js.map",
+    "main.4fd32d6a.js.map": "/E-Pharmacy/static/js/main.4fd32d6a.js.map",
     "114.9ccf65ac.chunk.js.map": "/E-Pharmacy/static/js/114.9ccf65ac.chunk.js.map",
     "793.fecafb83.chunk.js.map": "/E-Pharmacy/static/js/793.fecafb83.chunk.js.map",
     "397.e204a99a.chunk.js.map": "/E-Pharmacy/static/js/397.e204a99a.chunk.js.map",
@@ -51,6 +52,7 @@
     "128.04beb6d0.chunk.js.map": "/E-Pharmacy/static/js/128.04beb6d0.chunk.js.map",
     "73.23b70e9a.chunk.js.map": "/E-Pharmacy/static/js/73.23b70e9a.chunk.js.map",
     "457.d30c3374.chunk.js.map": "/E-Pharmacy/static/js/457.d30c3374.chunk.js.map",
+    "677.596ea658.chunk.js.map": "/E-Pharmacy/static/js/677.596ea658.chunk.js.map",
     "586.7d887fbd.chunk.js.map": "/E-Pharmacy/static/js/586.7d887fbd.chunk.js.map",
     "948.91e95669.chunk.js.map": "/E-Pharmacy/static/js/948.91e95669.chunk.js.map",
     "921.9def6766.chunk.js.map": "/E-Pharmacy/static/js/921.9def6766.chunk.js.map",
@@ -59,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.ec8ffcdd.css",
-    "static/js/main.dcecfb87.js"
+    "static/js/main.4fd32d6a.js"
   ]
 }
