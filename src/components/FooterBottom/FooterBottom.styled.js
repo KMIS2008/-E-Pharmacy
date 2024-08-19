@@ -13,5 +13,4 @@ color: #F7F8FA;
 font-size: 14px;
 line-height: 1,29;
 }
-
 `

@@ -3,7 +3,7 @@ import sprite from '../../images/sprite.svg';
 import {Container, SvgButton, Title, Text} from './RegisterModal.styled';
 import { RegisterForm } from "components/Register/Register";
 import { useEffect, useState } from "react";
-// import {LoginModal} from '../LoginModal/LoginModal';
+
 
 Modal.setAppElement('#modal');
 
@@ -26,7 +26,7 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
 
 
   function getCustomStyles() {
-    if (window.matchMedia('(max-width: 768px)').matches) { // Якщо екран менше або дорівнює 768px
+    if (window.matchMedia('(max-width: 768px)').matches) { 
         return {
           overlay: {
             backgroundColor: "rgba(38, 38, 38, 0.3)",
@@ -94,6 +94,5 @@ export const RegisterModal=({isOpenRegisterModal, setOpenRegisterModal, isModal}
             <RegisterForm isModal={isModal} setOpenRegisterModal={setOpenRegisterModal}/>
         </Modal> 
      </>
-      
     )
 }

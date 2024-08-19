@@ -50,8 +50,8 @@ line-height: 1,38;
 text-align: left;
 color: #1D1E21;
 
-white-space: nowrap;        /* Не позволяет тексту переноситься на новую строку */
-overflow: hidden;           /* Обрезает текст, выходящий за пределы контейнера */
+white-space: nowrap;        
+overflow: hidden;           
 text-overflow: ellipsis;
 
 @media (min-width: 768px) {

@@ -42,6 +42,5 @@ export const SearchInput=()=>{
                      </button>
 
     </ContainerInput>
-    
     </>
 }

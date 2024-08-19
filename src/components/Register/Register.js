@@ -30,7 +30,6 @@ export const RegisterForm=({isModal, setOpenRegisterModal})=>{
    }
 
     const { register, handleSubmit,
-        //  setValue, formState: { errors },
          reset} = useForm({
         resolver: yupResolver(SignupSchema),
       });
@@ -71,7 +70,6 @@ export const RegisterForm=({isModal, setOpenRegisterModal})=>{
 
          <ContainerNavigate>
               <Button type="submit" >Register</Button>
-              {/* {error && <Error>{error}</Error>} */}
 
               <Navigate onClick={handleNavigate}>Already have an account?</Navigate>
          </ContainerNavigate>

@@ -8,6 +8,8 @@ import {selectIdOrders} from '../../redux/selects';
 import { useDispatch, useSelector } from 'react-redux';
 import {addCartFinish} from '../../redux/operations';
 import { nanoid } from 'nanoid';
+import { NotificationContainer} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -52,6 +54,7 @@ export const ShippingInfo=()=>{
             _id
         };
         try {
+
             await dispatch(addCartFinish(payload));
             reset();
         } catch (errors) {
@@ -61,6 +64,7 @@ export const ShippingInfo=()=>{
 
   return(
     <Container>
+       <NotificationContainer />
        <Title>Enter shipping info </Title>
        <Text>Enter your delivery address where you get the product. You can also send any other location where you send the products.</Text>
        <form onSubmit={handleSubmit(onSubmit)}>
@@ -137,8 +141,6 @@ export const ShippingInfo=()=>{
             </ContainerTotal>
 
             <Button type='submit'>Place order</Button>
-
        </form>
     </Container>
-)
-}
+)}

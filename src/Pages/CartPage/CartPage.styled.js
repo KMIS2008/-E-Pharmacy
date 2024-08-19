@@ -9,5 +9,4 @@ export const ContainerCart=styled.div`
    display: flex;
    justify-content: space-between; 
 }
-
 `

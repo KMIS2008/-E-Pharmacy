@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import {selectTotalPages, 
-    // selectCurrentPage
 } from '../../redux/selects';
 import {Container, Button, ButtonNext, StyledRiArrowLeftDoubleFill, 
         StyledIoIosArrowBack, StyledIoIosArrowForward, StyledArrowRightDoubleFill } from './Pagination.styled';
@@ -9,7 +8,6 @@ import {Container, Button, ButtonNext, StyledRiArrowLeftDoubleFill,
 
 export const Pagination=({handleChangeNewPage, currentPage})=>{
   const totalPages=useSelector(selectTotalPages);
-//   const currentPage=useMediaQuery(selectCurrentPage);
   
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 

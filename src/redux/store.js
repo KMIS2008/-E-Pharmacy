@@ -7,12 +7,6 @@ import {storesReducer} from './storesSlices';
 import {productsReducer} from './productsSlice';
 import {orderReducer} from './cartSlice';
 
-// import {newsReducer} from './newsSlice';
-// import {noticesReducer} from './noticesSlice';
-// import {friendReducer} from './friendsSlice';
-// import {userReducer} from './userSlice';
-
-
 import {
   persistStore,
   persistReducer,
@@ -40,7 +34,6 @@ export const store = configureStore({
     products: productsReducer,
     orders: orderReducer,
     finishorders:orderReducer,
-    // user: userReducer,
   },
   
   middleware: getDefaultMiddleware =>

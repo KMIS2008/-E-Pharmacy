@@ -3,7 +3,6 @@ import {selectIdProducts} from '../../redux/selects';
 import {Container, Img, ContainerTitle, Title, Text, TextBrand, ContainerСounter,
        Сounter, CounterNumber, Button, ContainerButtons, ContainerInfo
 } from './ProductOverview.styled';
-// import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addCart } from 'redux/operations';
 import { useState } from 'react';
@@ -20,9 +19,8 @@ export const ProductOverview=()=>{
     };
 
     const handleDecrement = () => {
-        setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); // Предотвращение уменьшения ниже 1
+        setCounter(prevCounter => (prevCounter > 1 ? prevCounter - 1 : 1)); 
     };
-
 
     const handleAddCart=(product)=>{
         const { id, ...productWithoutId } = product;
@@ -32,7 +30,7 @@ export const ProductOverview=()=>{
     }
 
 if (!product) {
-    return <div>Loading...</div>; // или другой индикатор загрузки
+    return <div>Loading...</div>; 
 }
    const{photo, name, price, suppliers} =product;
     return(

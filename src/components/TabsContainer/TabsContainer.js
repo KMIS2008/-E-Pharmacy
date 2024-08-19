@@ -14,11 +14,10 @@ export const TabsContainer=()=>{
     const [isDiscription, setDiscription]=useState(false);
     const [isReviews, setReviews]=useState(false);
     const product=useSelector(selectIdProducts);
-    // const {discription, reviews}=product;
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
     if (!product) {
-        return <div>Loading...</div>; // или другой индикатор загрузки
+        return <div>Loading...</div>; 
     }
 
     const handleDiscription=()=>{
@@ -80,6 +79,5 @@ export const TabsContainer=()=>{
             }
             </ContainerReveiws>)}
         </div>
-
     )
 }

@@ -15,7 +15,7 @@ export default function MedicineStorePage(){
 
     return(
         <>
-        <MedicineStores stores={stores} title={'Medicine store'}/>
+            <MedicineStores stores={stores} title={'Medicine store'}/>
         </>
     )
 }

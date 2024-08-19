@@ -6,7 +6,7 @@ export const User=()=>{
     const user =useSelector(selectUser);
     return(
         <Container>
-            <Text>{user.email}</Text>
+            <Text>{user.email||""}</Text>
         </Container>
     )
 }

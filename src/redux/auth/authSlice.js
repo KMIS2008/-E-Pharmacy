@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { registr, logIn, logOut, 
   refreshUser,
-  // fetchUserEdit 
 } from './operations';
 
 
@@ -10,7 +9,6 @@ const initialState = {
           name: null, 
           email: null, 
           phone: null, 
-          // avatar:null 
         },
   token: null,
   isLoggedIn: false,
@@ -43,10 +41,6 @@ const initialState = {
               state.isRefreshing = true;
       }).addCase(refreshUser.rejected,(state)=> {
               state.isRefreshing = false; })
-      // .addCase(fetchUserEdit.fulfilled, (state, action) => {
-      //         state.user = action.payload;
-      //         state.token = action.payload.token;
-      //         state.isLoggedIn = true;})
       })
 
 

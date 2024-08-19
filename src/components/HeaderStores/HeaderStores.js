@@ -8,7 +8,6 @@ export const HeaderStores=({title})=>{
         <>
           <Title>{title}</Title>
           {location.pathname === '/home' && <Text>Search for Medicine, Filter by your location</Text>}
-       
         </>
     )
 }

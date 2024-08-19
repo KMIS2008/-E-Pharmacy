@@ -24,20 +24,7 @@ position: fixed;
   @media (min-width: 768px) {
     width: 334px;
   }
-
 `;
-
-// export const ContainTransporent = styled.div`
-// width: 200px;
-// background-color: #F7F8FA; 
-
-// `;
-// export const ContainContext = styled.div`
-// width: 210px;
-// background-color: ${props => (props.theme.colors.green)}; 
-
-// `;
-
 
 export const CloseIcon = styled.svg`
   position: absolute;

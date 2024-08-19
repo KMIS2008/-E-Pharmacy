@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const List=styled.ul`
 display: flex;
 justify-content: end;
@@ -12,7 +11,6 @@ margin-top: ${p=>p.theme.spacing(4)};
   margin-top: ${p=>p.theme.spacing(0)};
 }
 `
-
 
 export const IconContainer = styled.div`
   svg {

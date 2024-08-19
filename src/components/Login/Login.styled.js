@@ -10,7 +10,6 @@ export const Button=styled.button`
 margin-bottom: 20px;
 width: 100%;
 height:44px;
-/* padding: 13px 139px; */
 border-radius: 60px;
 
 background: #59B17A;
@@ -22,10 +21,6 @@ cursor: pointer;
 &:hover{
     background: #3F945F;
 }
-
-/* @media (min-width: 768px) {
-    width: 280px;
-} */
 `
 
 export const Input=styled.input`

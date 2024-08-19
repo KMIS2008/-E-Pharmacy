@@ -12,7 +12,6 @@ import {SearchInput} from '../SearchInput/SearchInput';
 const SignupSchema = Yup.object().shape({
     category: Yup.string(),
     name: Yup.string(),
-
 });
 
 
@@ -31,9 +30,7 @@ export const FilterForm=()=>{
           padding: '0 0 0 20px',
           marginBottom: '10px',
           borderRadius: '60px',
-        //   height: state.isMulti ? '52px' : '42px', 
           border: state.isFocused ? '1px solid #59B17A' : '1px solid #1D1E2133',
-        //   boxShadow: state.isFocused ? '0 0 0 1px #F6B83D' : 'none',
           '&:hover': {
             border: '1px solid #59B17A',
           },
@@ -41,7 +38,6 @@ export const FilterForm=()=>{
        
         option: (provided, state) => ({
           ...provided,
-        //   borderRadius: '15px',
           border: 'none',
           padding: '0 20px',
 
@@ -52,11 +48,6 @@ export const FilterForm=()=>{
           letterSpacing: '-0.03em',
           color: state.isSelected ? '#fff' : '#1D1E21',
           backgroundColor: state.isSelected ? '#59B17A' : '#fff',
-        //    color: '#1D1E21',
-
-        //   '&:hover': {
-        //     color: '#262626',
-        //   },
         }),
 
         indicatorSeparator: (provided) => ({
@@ -112,7 +103,6 @@ export const FilterForm=()=>{
                      </svg>
                     Filter
                 </Button>
-                
         </Form>
     )
 }

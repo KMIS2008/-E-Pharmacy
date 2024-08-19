@@ -26,7 +26,6 @@ export const ContainerTitle=styled.div`
 export const Img=styled.img`
 width:120px;
 height:120px;
-/* padding: 14px 18px; */
 border-radius: 27px;
 opacity: 0px;
 border: 1.15px solid #F1F1F1;

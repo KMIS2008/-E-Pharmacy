@@ -23,7 +23,6 @@ export const LoginForm=({isModal, setLoginModal})=>{
                 }}
          
              const { register, handleSubmit,
-                 //  setValue, formState: { errors },
                   reset} = useForm({
                  resolver: yupResolver(SignupSchema),
                });
@@ -55,9 +54,7 @@ export const LoginForm=({isModal, setLoginModal})=>{
                   </ContainerInput>
          
                   <ContainerNavigate>
-                       <Button type="submit" >Log in</Button>
-                       {/* {error && <Error>{error}</Error>} */}
-         
+                       <Button type="submit" >Log in</Button>        
                        <Navigate onClick={handleNavigate}>Don't have an account?</Navigate>
                   </ContainerNavigate>
          

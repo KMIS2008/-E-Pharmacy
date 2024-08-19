@@ -6,8 +6,6 @@ padding: 20px;
 @media (min-width: 768px) {
     padding: 0 30px;
     display: flex;
-    /* justify-content: space-between;
-    align-items: center; */
     gap:10px;
 }
 

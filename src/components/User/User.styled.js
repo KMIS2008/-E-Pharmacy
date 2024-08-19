@@ -23,7 +23,6 @@ export const Text = styled.p`
   text-align: center;
   color: ${p => p.theme.colors.green};
   
-  /* Скрываем весь текст, кроме первой буквы */
   font-size: 0; 
 
   &::first-letter {

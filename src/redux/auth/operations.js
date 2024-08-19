@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = "https://e-pharmacy-backend-1.onrender.com/api";
-// const User_URL='/users/current';
 
 const setAuthHeader = token => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -105,21 +104,3 @@ const setAuthHeader = token => {
       }
     }
   );
-
-//   export const fetchUserEdit = createAsyncThunk('user/edit', async (info, thunkAPI) => {
-//     try {
-//         const response = await axios.patch(`${User_URL}/edit`, info);
-//         return response.data;
-//     } catch (e) {
-//               toast.error(`Error: ${e.message}`, {
-//             position: toast.POSITION.TOP_RIGHT,
-//             autoClose: 5000, 
-//             hideProgressBar: true,
-//             closeOnClick: true,
-//             pauseOnHover: true,
-//             draggable: true,
-//             progress: undefined,
-//         });
-//         return thunkAPI.rejectWithValue(e.message);
-//     }
-// });

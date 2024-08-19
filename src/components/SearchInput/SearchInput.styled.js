@@ -10,7 +10,6 @@ top:30%;
 right: 10px;
 `
 
-
 export const Input = styled.input`
 margin-bottom: ${p=>p.theme.spacing(2)};
 width: 100%;

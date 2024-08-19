@@ -15,7 +15,6 @@ export const SocialMediaIcons=()=>{
         };
     
     return(
-      
           <List>
               <li>
                   <a 
@@ -56,8 +55,6 @@ export const SocialMediaIcons=()=>{
                       </svg>
                     </a>
               </li>
-          </List>
-       
-    )
-}
+          </List>    
+    )}
 

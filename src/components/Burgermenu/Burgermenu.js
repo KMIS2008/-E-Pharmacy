@@ -15,7 +15,6 @@ export const Burgermenu=({onClose})=>{
 
                <NavigationLinks/>   
                <AuthenticationLinks/>         
-       
 
         </Container>
     )

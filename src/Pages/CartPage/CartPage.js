@@ -11,7 +11,6 @@ export default function CartPage(){
              <ShippingInfo/>
              <Order/>            
           </ContainerCart>
-
         </Container>
     )
 }

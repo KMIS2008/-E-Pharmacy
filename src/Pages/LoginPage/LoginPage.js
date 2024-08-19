@@ -7,7 +7,6 @@ export default function  LoginPage(){
         <Container>
             <Tittle/>
             <LoginForm/>
-        
         </Container>
     )
 }

@@ -54,7 +54,6 @@ export const MainBanner=()=>{
                 ${DrugMobile3} 3x
                       `}
                />
-
           </picture>
 
           <PromoContent/>

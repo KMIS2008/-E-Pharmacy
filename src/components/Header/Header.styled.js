@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContaterHeder = styled.div`
-/* position: fixed; */
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -56,5 +55,3 @@ color: ${p=>p.theme.colors.green};
 background: #59B17A1A;
 border-radius: 50%;
 `
-
-

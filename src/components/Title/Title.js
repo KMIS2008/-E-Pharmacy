@@ -64,8 +64,6 @@ export const Tittle=()=>{
                 
                 <Title> delivered Say goodbye to all <Span>your healthcare </Span> worries with us </Title>
 
-           
-
         </Container>
     )
 }

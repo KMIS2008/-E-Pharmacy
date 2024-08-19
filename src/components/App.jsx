@@ -61,20 +61,10 @@ const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
              <Route path="medicine-store" element={<MedicineStorePage/>}/>
              <Route path="medicine" element={<MedicinePage/>}/>
              <Route path='product' element={<ProdactPage/>}/>
-             {/* <Route path='cart' element={<CartPage/>}/> */}
              <Route path='register' element={<RegisterPage/>}/>
              <Route path = "login" element ={<RestrictedRoute redirectTo="/" component={<LoginPage/>} />}/>
              <Route path="cart" element={ <PrivateRoute redirectTo="/login" component={<CartPage/>} />}/>
-             
-              {/* <Route path="home" element={<Home/>}/> */}
-              {/* <Route path="register" element = { <RestrictedRoute redirectTo="/profile" component={<Reistr />} />}/>
-              <Route path = "login" element ={<RestrictedRoute redirectTo="/profile" component={<Login/>} />}/> */}
-              {/* <Route path="news" element={<News/>}/>
-              <Route path="notices" element= { <Notices/>} /> */}
-              {/* <Route path="add-pet" element={ <PrivateRoute redirectTo="/login" component={<AddPet/>} />}/>
-              <Route path="friends" element={<FriendPage/>}/>
-              <Route path="profile" element={ <PrivateRoute redirectTo="/login" component={<Profile/>} />}/> */}
-              <Route path="*" element={<ErrorPage/>} />
+             <Route path="*" element={<ErrorPage/>} />
             </Route>
           </Routes>
           </Suspense>

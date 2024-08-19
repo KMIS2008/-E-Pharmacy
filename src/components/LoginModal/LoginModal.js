@@ -24,7 +24,7 @@ export const LoginModal=({isLoginModal, setLoginModal, isModal, setOpenRegisterM
   }, []);
 
   function getCustomStyles() {
-    if (window.matchMedia('(max-width: 768px)').matches) { // Якщо екран менше або дорівнює 768px
+    if (window.matchMedia('(max-width: 768px)').matches) { 
         return {
           overlay: {
             backgroundColor: "rgba(38, 38, 38, 0.3)",

@@ -25,9 +25,6 @@ export const ReviewsSection=()=>{
                 </ContainerItem>
             ))}
         </ContainerList>
-
-   
-
         </>
     )
 }

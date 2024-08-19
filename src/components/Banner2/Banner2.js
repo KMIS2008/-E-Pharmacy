@@ -2,7 +2,6 @@ import {ContainerList, Numbert, Text, TextRaite, Button, ContainerBanner, Contai
 
 export const Banner2=()=>{
     return(
-
             <ContainerList>
              <ContainerBanner>
                 <Numbert>2</Numbert>
@@ -13,6 +12,5 @@ export const Banner2=()=>{
                 <Button type='button'>Read more</Button>
              </ContainerSale>
           </ContainerList>
-   
     )
 }

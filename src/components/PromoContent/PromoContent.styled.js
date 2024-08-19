@@ -37,4 +37,3 @@ color: ${p=>p.theme.colors.white};
     font-size: 16px;
 }
 `
-
