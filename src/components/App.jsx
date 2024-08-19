@@ -8,7 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { useAuth } from 'redux/hook/useAuth';
 import { refreshUser } from 'redux/auth/operations';
-// import { RestrictedRoute } from './RestrictedRoute'; 
+import { RestrictedRoute } from './RestrictedRoute'; 
 // import { PrivateRoute } from './PrivateRoute';
 
 import { lazy, Suspense  } from 'react';
@@ -63,7 +63,8 @@ const LoginPage = lazy(()=> import ('Pages/LoginPage/LoginPage'));
              <Route path='product' element={<ProdactPage/>}/>
              <Route path='cart' element={<CartPage/>}/>
              <Route path='register' element={<RegisterPage/>}/>
-             <Route path='login' element={<LoginPage/>}/>
+             {/* <Route path='login' element={<LoginPage/>}/> */}
+             <Route path = "login" element ={<RestrictedRoute redirectTo="/" component={<LoginPage/>} />}/>
 
              
               {/* <Route path="home" element={<Home/>}/> */}
