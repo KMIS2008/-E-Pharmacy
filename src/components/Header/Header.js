@@ -29,6 +29,7 @@ export const Header = () => {
   const isMedicine = location.pathname === '/medicine';
   const isStore = location.pathname === '/medicine-store'; 
   const isProduct = location.pathname === '/product';
+  const isCart = location.pathname === '/cart';
 
   const handleNavigate = () => {
     navigate('/cart');
@@ -57,9 +58,8 @@ export const Header = () => {
              <NavigationLinks stylefooter={true} isHeader={true}/>
         )}
 
-
       <ContainerNavigate>
-        {(isMedicine || isStore || isProduct) && (
+        {(isMedicine || isStore || isProduct ||isCart ||isHome) && (
           <ContainerSvgCart>
             <svg width={16} height={16} onClick={handleNavigate}>
               <use xlinkHref={sprite + '#icon-shopping-cart'} />
@@ -77,14 +77,13 @@ export const Header = () => {
           </Svg>
         )} 
         
-        {((isMedicine||isStore||isProduct)&& isTablet) && (
+        {((isMedicine||isStore||isProduct||isCart)&& isTablet) && (
           <Svg onClick={handleBurgerMenu}>
             <use xlinkHref={sprite + '#icon-burgermenu-green'} />
           </Svg>
         )}
 
         {!isTablet&&<AuthenticationLinks/>}
-
 
       </ContainerNavigate>
 
