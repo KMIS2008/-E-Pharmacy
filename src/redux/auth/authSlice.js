@@ -6,7 +6,8 @@ import { registr, logIn, logOut,
 
 
 const initialState = {
-  user: { name: null, 
+  user: { 
+          name: null, 
           email: null, 
           phone: null, 
           // avatar:null 
