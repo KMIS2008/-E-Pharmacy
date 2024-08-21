@@ -1,5 +1,6 @@
 import { GlobalStyle } from './GlobalStyle';
-import { Audio } from 'react-loader-spinner'
+import { Audio } from 'react-loader-spinner';
+import { Navigate } from 'react-router-dom';
 
 import {useEffect } from 'react';
 import { useDispatch} from 'react-redux';
@@ -57,6 +58,7 @@ const ErrorPage = lazy(()=> import ('Pages/ErrorPage/ErrorPage'));
       />}>
           <Routes>
              <Route path = "/" element = {<SharedLayout/>}>
+             <Route index element={<Navigate to="/home" />} />
              <Route path="home" element={<Home/>}/>
              <Route path="medicine-store" element={<MedicineStorePage/>}/>
              <Route path="medicine" element={<MedicinePage/>}/>
