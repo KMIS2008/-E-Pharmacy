@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container=styled.div`
 display: flex;
-flex-direction:  ${p=>p.$stylefooter?"none":'column'}; 
+flex-direction:  ${p=>p.$stylefooter||p.$styledisplay?"none":'column'}; 
 gap: ${p=>p.theme.spacing(2)};
 `
 
@@ -26,6 +26,12 @@ cursor: pointer;
 
 &:hover{
     background: ${p=>p.theme.colors.green};
+    color: ${p=>p.theme.colors.white};
+    border: 4px solid  ${p=>p.theme.colors.white};
+}
+
+&:active{
+        background: ${p=>p.theme.colors.green};
     color: ${p=>p.theme.colors.white};
     border: 4px solid  ${p=>p.theme.colors.white};
 }

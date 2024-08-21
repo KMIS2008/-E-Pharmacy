@@ -55,7 +55,7 @@ export const Header = () => {
       <Logo />
 
       {!isTablet&&(
-             <NavigationLinks stylefooter={true} isHeader={true}/>
+             <NavigationLinks styledisplay={true} isHeader={true}/>
         )}
 
       <ContainerNavigate>

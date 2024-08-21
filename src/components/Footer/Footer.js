@@ -32,7 +32,7 @@ export const Footer=()=>{
                   </Text>                
                </div>
                <ContainerSpecial>
-                 <NavigationLinks stylefooter={stylefooter}/>
+                 <NavigationLinks stylefooter={stylefooter} styledisplay={true}/>
                  {isTablet&& <SocialMediaIcons />  }
                  
                </ContainerSpecial>                
