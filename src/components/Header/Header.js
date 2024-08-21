@@ -59,7 +59,7 @@ export const Header = () => {
         )}
 
       <ContainerNavigate>
-        {(isMedicine || isStore || isProduct ||isCart ||isHome) && (
+        {((isMedicine || isStore || isProduct ||isCart ||isHome)&&isLoggedIn) && (
           <ContainerSvgCart>
             <svg width={16} height={16} onClick={handleNavigate}>
               <use xlinkHref={sprite + '#icon-shopping-cart'} />
