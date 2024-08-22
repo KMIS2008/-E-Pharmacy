@@ -49,6 +49,7 @@ export const LoginForm=({isModal, setLoginModal})=>{
          
                       <Input 
                              id = "password" 
+                             type="password"
                              placeholder='Password' 
                              {...register('password', { required: true })} />        
                   </ContainerInput>
