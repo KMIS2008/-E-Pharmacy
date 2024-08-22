@@ -19,7 +19,11 @@ export const ReviewsSection=()=>{
         <ContainerList>
            {reviews?.map(review=>(
                 <ContainerItem key={review._id}>
-                    <Img src={review.photo} alt='avatar' width={64} height={64}/>
+                    <Img 
+                   src={`https://robohash.org/${review.name}`} 
+                    alt='avatar' 
+                    width={64} 
+                    height={64}/>
                     <Name>{review.name}</Name>
                     <Testimonial>{review.testimonial}</Testimonial>
                 </ContainerItem>
