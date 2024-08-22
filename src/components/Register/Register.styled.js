@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const Container=styled.form`
+margin-bottom: ${p=>p.$isModal? '0':'200px'};
 @media (min-width: 1440px) {
     width: ${(p) => (p.$isModal ? '100%' : '50%')};
+    padding-top: ${(p) => (p.$isModal ? '0' : '90px')};
 }
 `
 
 export const Button=styled.button`
+margin-top: ${p=>p.theme.spacing(2)};
 margin-bottom: 20px;
 width: 100%;
 height:44px;
@@ -24,7 +27,7 @@ cursor: pointer;
 `
 
 export const Input=styled.input`
-margin-bottom: ${p=>p.theme.spacing(1)};
+margin-bottom: ${p=>p.theme.spacing(2)};
 padding-left: ${p=>p.theme.spacing(4)};
 width: 100%;
 height: 44px;
@@ -68,3 +71,4 @@ export const ContainerNavigate=styled.div`
     width: 280px;
 }
 `
+

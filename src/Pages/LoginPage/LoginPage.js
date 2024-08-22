@@ -40,7 +40,7 @@ export default function  LoginPage(){
                             <>
                                 <ImgTop src={RectangleDT42214} alt="Image Top" />
                                 <Img src={RectangleDT42213} alt="Image Middle" />
-                                <ImgBottom src={RectangleDT42213} alt="Image Bottom" />
+                                <ImgBottom src={RectangleDT42212} alt="Image Bottom" />
                             </>
                         )}
         </Container>

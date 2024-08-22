@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container=styled.div`
 padding: 20px;
 position: relative;
-overflow: hidden;
 
 @media (min-width: 1440px) {
     display: flex;
@@ -44,7 +43,7 @@ width: 120px;
 
 @media (min-width: 768px) {
     width: 200px;
-    bottom: -40px;
+    bottom: 0px;
     right: 0;
 }
 `
