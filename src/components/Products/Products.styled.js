@@ -23,7 +23,20 @@ gap: 14px;
 border-radius: 20px;
 opacity: 0px;
 background: #F7F7F7;
-border: 1.15px solid #59B17A99
+border: 1.15px solid #59B17A99;
+
+width: 335px;
+height: 300px;
+
+@media (min-width: 768px) {
+   min-width: 226px;
+    min-height: 260px;
+}
+
+@media (min-width: 1440px) {
+   min-width: 280px;
+    min-height: 280px;
+}
 `
 
 export const ContainerTitle=styled.div`
