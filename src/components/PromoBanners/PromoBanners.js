@@ -1,14 +1,14 @@
-import { Banner1 } from "components/Banner1/Banner1";
+import { BannerMaxSale } from "components/BannerMaxSale/BannerMaxSale";
 import {ContainerList} from './PromoBanners.styled';
-import {Banner2} from '../../components/Banner2/Banner2';
-import {Banner3} from '../../components/Banner3/Banner3';
+import {BannerSecurity} from '../BannerSecurity/BannerSecurity';
+import {BannerSale} from '../BannerSale/BannerSale';
 
 export const PromoBanners=()=>{
     return(
         <ContainerList>
-           <Banner1/>
-           <Banner2/>
-           <Banner3/>
+           <BannerMaxSale/>
+           <BannerSecurity/>
+           <BannerSale/>
         </ContainerList>
     )
 }

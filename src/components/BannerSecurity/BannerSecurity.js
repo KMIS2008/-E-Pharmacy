@@ -1,6 +1,6 @@
-import {ContainerList, Numbert, Text, TextRaite, Button, ContainerBanner, ContainerSale} from './Banner2.styled';
+import {ContainerList, Numbert, Text, TextRaite, Button, ContainerBanner, ContainerSale} from './BannerSecurity.styled';
 
-export const Banner2=()=>{
+export const BannerSecurity=()=>{
     return(
             <ContainerList>
              <ContainerBanner>
