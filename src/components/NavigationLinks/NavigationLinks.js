@@ -1,18 +1,21 @@
 import {Container, Button} from './NavigationLinks.styled';
 import { useNavigate, useLocation  } from 'react-router-dom';
 
-export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=false})=>{
+export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=false, onClose})=>{
     const navigator = useNavigate(); 
     const location = useLocation();
 
     const handleHomeClick = () => {
         navigator('home');     
+        onClose();
     };
     const handleHomeMedicineStore = () => {
-        navigator('medicine-store');     
+        navigator('medicine-store');  
+        onClose();   
     };
     const handleHomeMedicine = () => {
-        navigator('medicine');     
+        navigator('medicine');
+        onClose();     
     };
 
     const isHomeActive = location.pathname === '/home';
@@ -25,6 +28,7 @@ export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=f
                    $isHeader={isHeader} 
                    $isActiveHome={isHomeActive}
                    type="button" 
+                   onClick={handleHomeClick}
                    style={{
                       backgroundColor: isHomeActive? 'transparent' : 'white',
                          color: isHomeActive ? 'white' : '#93939A',

@@ -13,7 +13,7 @@ export const Burgermenu=({onClose})=>{
                 <use xlinkHref={sprite + '#icon-x-1'}/>
               </CloseIcon>
 
-               <NavigationLinks/>   
+               <NavigationLinks onClose={onClose}/>   
                <AuthenticationLinks/>         
 
         </Container>
