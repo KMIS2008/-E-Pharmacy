@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const Container=styled.form`
+margin-bottom: ${p=>p.$isModal? '0':'200px'};
 @media (min-width: 1440px) {
-    width: ${(p) => (p.$isModal ? '100%' : '50%')};
+    width: ${(p) => (p.$isModal ? '100%' : '323px')};
+    padding-top: ${(p) => (p.$isModal ? '0' : '90px')};
 }
 `
 
 export const Button=styled.button`
+margin-top: 98px;
 margin-bottom: 20px;
 width: 100%;
 height:44px;
@@ -21,10 +24,15 @@ cursor: pointer;
 &:hover{
     background: #3F945F;
 }
+
+@media (min-width: 768px) {
+    margin-top: 58px;
+    width: 323px;
+}
 `
 
 export const Input=styled.input`
-margin-bottom: ${p=>p.theme.spacing(1)};
+margin-bottom: ${p=>p.theme.spacing(2)};
 padding-left: ${p=>p.theme.spacing(4)};
 width: 100%;
 height: 44px;
@@ -56,11 +64,12 @@ cursor: pointer;
 
 export const ContainerInput=styled.div`
 @media (min-width: 768px) {
-    display: ${(p) => (p.$isModal ? 'block' : 'grid')};
+    width: ${(p) => (p.$isModal ? '100%' : '323px')};
+    /* display: ${(p) => (p.$isModal ? 'block' : 'grid')};
     grid-template-columns: ${(p) => (p.$isModal ? 'initial' : 'repeat(2, 1fr)')};
-    gap: ${(p) => (p.$isModal ? 'initial' : p.theme.spacing(2))};
+    gap: ${(p) => (p.$isModal ? 'initial' : p.theme.spacing(2))}; */
 
-    margin-bottom: ${(p) => (p.$isModal ? p.theme.spacing(4) : p.theme.spacing(12))};
+    /* margin-bottom: ${(p) => (p.$isModal ? p.theme.spacing(4) : p.theme.spacing(12))}; */
 }
 `
 
