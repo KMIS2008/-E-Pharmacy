@@ -1,7 +1,8 @@
 import {Container, Button} from './NavigationLinks.styled';
 import { useNavigate, useLocation  } from 'react-router-dom';
 
-export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=false, onClose})=>{
+
+export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=false, setIsOpen= () => {}, onClose= () => setIsOpen(false)})=>{
     const navigator = useNavigate(); 
     const location = useLocation();
 
@@ -60,7 +61,3 @@ export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=f
         </Container>
     )
 }
-
-
-
-// border: 4px solid  ${p=>p.theme.colors.white};
