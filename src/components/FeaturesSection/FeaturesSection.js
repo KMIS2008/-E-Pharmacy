@@ -35,12 +35,6 @@ export const FeaturesSection=()=>{
                 </svg>
                 <p>Storage shed</p>
             </ContainerItem>
-            <ContainerItem>
-                <svg width={20} height={20}>
-                <use xlinkHref={sprite + '#icon-lightning-01'}/>
-                </svg>
-                <p>Take user orders form online</p>
-            </ContainerItem>
         </Container>
     )
 }
