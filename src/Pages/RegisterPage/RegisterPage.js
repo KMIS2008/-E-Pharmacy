@@ -9,6 +9,7 @@ import RectangleDT42212 from '../../images/RectangleDT42212.png';
 import RectangleDT42213 from '../../images/RectangleDT42213.png';
 import RectangleDT42214 from '../../images/RectangleDT42214.png';
 
+
 export default function RegisterPage(){
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 

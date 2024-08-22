@@ -2,6 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 axios.defaults.baseURL = "https://e-pharmacy-backend-1.onrender.com/api";
 
@@ -19,6 +21,7 @@ const setAuthHeader = token => {
       try {
         const res = await axios.post('/user/register', credentials);
         setAuthHeader(res.data.token);
+        NotificationManager.success('Your register!', 'Success');
         return res.data;
       } catch (error) {
         toast.error(`Error: ${error.message}`, {

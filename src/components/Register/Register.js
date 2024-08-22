@@ -7,6 +7,8 @@ import {registr} from '../../redux/auth/operations';
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import {LoginModal} from '../LoginModal/LoginModal';
+import { NotificationContainer} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -46,7 +48,8 @@ export const RegisterForm=({isModal, setOpenRegisterModal})=>{
     return (
 
         <Container onSubmit={handleSubmit(onSubmit)} $isModal={isModal}>
-         <ContainerInput $isModal={isModal}>
+          <NotificationContainer />
+          <ContainerInput $isModal={isModal}>
             <Input 
                   id = "name" 
                   placeholder='User Name' 
