@@ -26,6 +26,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 8px;
+margin-bottom: 10px;
 width: 116px;
 height: 44px;
 
