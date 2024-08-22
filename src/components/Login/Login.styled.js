@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 export const Container=styled.form`
 margin-bottom: ${p=>p.$isModal? '0':'200px'};
@@ -8,7 +9,10 @@ margin-bottom: ${p=>p.$isModal? '0':'200px'};
 }
 `
 
-export const Button=styled.button`
+export const Button=styled(NavLink)`
+display: flex;
+align-items: center;
+justify-content: center;
 margin-top: 98px;
 margin-bottom: 20px;
 width: 100%;
@@ -52,7 +56,7 @@ border: 1px solid #1D1E211A;
 }
 `
 
-export const Navigate=styled.p`
+export const Navigate=styled(NavLink)`
 font-family: Inter;
 font-size: 12px;
 font-weight: 400;
@@ -74,7 +78,8 @@ export const ContainerInput=styled.div`
 `
 
 export const ContainerNavigate=styled.div`
+text-align: center;
 @media (min-width: 768px) {
-    width: 280px;
+    width: 323px;
 }
 `
