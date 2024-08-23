@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 export const Container=styled.div`
 display: flex;
@@ -37,7 +38,9 @@ gap: ${p=>p.theme.spacing(2)};
 // }
 // `
 
-export const Button = styled.button`
+export const Button = styled(NavLink)`
+  display: flex;
+  align-items: center;
   padding: 10px 18px;
   border-radius: 60px;
   opacity: 0px;

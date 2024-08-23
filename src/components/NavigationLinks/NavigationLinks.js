@@ -1,21 +1,17 @@
 import {Container, Button} from './NavigationLinks.styled';
-import { useNavigate, useLocation  } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
 
 export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=false, setIsOpen= () => {}, onClose= () => setIsOpen(false)})=>{
-    const navigator = useNavigate(); 
     const location = useLocation();
 
-    const handleHomeClick = () => {
-        navigator('home');     
+    const handleHomeClick = () => {    
         onClose();
     };
     const handleHomeMedicineStore = () => {
-        navigator('medicine-store');  
         onClose();   
     };
     const handleHomeMedicine = () => {
-        navigator('medicine');
         onClose();     
     };
 
@@ -30,6 +26,7 @@ export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=f
                    $isActiveHome={isHomeActive}
                    type="button" 
                    onClick={handleHomeClick}
+                   to="/home"
                    style={{
                       backgroundColor: isHomeActive? 'transparent' : 'white',
                          color: isHomeActive ? 'white' : '#93939A',
@@ -41,6 +38,7 @@ export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=f
                    $isHeader={isHeader} 
                    type="button" 
                    onClick={handleHomeMedicineStore}
+                   to="/medicine-store"
                    style={{
                        backgroundColor: isMedicineStoreActive ? '#59B17A' : 'white',
                        color: isMedicineStoreActive ? 'white' : '#93939A',
@@ -52,6 +50,7 @@ export const NavigationLinks=({stylefooter=false, isHeader=false, styledisplay=f
                    $isHeader={isHeader} 
                    type="button" 
                    onClick={handleHomeMedicine}
+                   to="/medicine"
                    style={{
                       backgroundColor: isMedicineActive ? '#59B17A' : 'white',
                       color: isMedicineActive ? 'white' : '#93939A',
