@@ -7,7 +7,7 @@ import { useDispatch} from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import SharedLayout from './SharedLayout/SharedLayout';
-import { useAuth } from 'redux/hook/useAuth';
+import { useAuth } from 'hook/useAuth';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute'; 
 import { PrivateRoute } from './PrivateRoute';

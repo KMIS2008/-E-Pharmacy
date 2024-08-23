@@ -1,4 +1,4 @@
-import { useAuth } from 'redux/hook/useAuth';
+import { useAuth } from 'hook/useAuth';
 import { Navigate } from 'react-router-dom';
 
 
