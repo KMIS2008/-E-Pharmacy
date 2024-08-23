@@ -55,7 +55,7 @@ export const LoginForm=({isModal, setLoginModal})=>{
                   </ContainerInput>
          
                   <ContainerNavigate>
-                       <Button type="submit" to="/home">Log in</Button>        
+                       <Button type="submit">Log in</Button>        
                        <Navigate to="/register"  onClick={handleNavigate}>Don't have an account?</Navigate>
                   </ContainerNavigate>
          

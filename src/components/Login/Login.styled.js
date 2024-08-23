@@ -9,7 +9,7 @@ margin-bottom: ${p=>p.$isModal? '0':'200px'};
 }
 `
 
-export const Button=styled(NavLink)`
+export const Button=styled.button`
 display: flex;
 align-items: center;
 justify-content: center;

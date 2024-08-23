@@ -1,5 +1,5 @@
 import { createSlice} from '@reduxjs/toolkit';
-import {fetchnearest} from './operations';
+import {fetchnearest} from '../operations';
 
 const allNearest ={
     nearest:[],

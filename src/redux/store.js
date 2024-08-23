@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from "./auth/authSlice";
-import {reviewsReducer} from './rewiesSlice';
-import {nearestReducer} from './nearestSlice';
-import {storesReducer} from './storesSlices';
-import {productsReducer} from './productsSlice';
-import {orderReducer} from './cartSlice';
+import {reviewsReducer} from './rewies/rewiesSlice';
+import {nearestReducer} from './nearest/nearestSlice';
+import {storesReducer} from './stores/storesSlices';
+import {productsReducer} from '../redux/product/productsSlice';
+import {orderReducer} from './Cart/cartSlice';
 
 import {
   persistStore,

@@ -73,7 +73,7 @@ export const RegisterForm=({isModal, setOpenRegisterModal})=>{
          </ContainerInput>
 
          <ContainerNavigate>
-              <Button type="submit" to="/login">Register</Button>
+              <Button type="submit">Register</Button>
 
               <Navigate to="/login" onClick={handleNavigate}>Already have an account?</Navigate>
          </ContainerNavigate>

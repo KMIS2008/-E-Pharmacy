@@ -41,6 +41,7 @@ gap: ${p=>p.theme.spacing(2)};
 export const Button = styled(NavLink)`
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px 18px;
   border-radius: 60px;
   opacity: 0px;

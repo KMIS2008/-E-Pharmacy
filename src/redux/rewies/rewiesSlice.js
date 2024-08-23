@@ -1,5 +1,5 @@
 import { createSlice} from '@reduxjs/toolkit';
-import {fetchreviews} from './operations';
+import {fetchreviews} from '../operations';
 
 const allRewies ={
     reviews:[],

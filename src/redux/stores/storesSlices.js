@@ -1,5 +1,5 @@
 import { createSlice} from '@reduxjs/toolkit';
-import {fetchstores} from './operations';
+import {fetchstores} from '../operations';
 
 const allStores ={
     stores:[],

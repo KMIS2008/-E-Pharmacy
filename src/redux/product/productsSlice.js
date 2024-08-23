@@ -1,5 +1,5 @@
 import { createSlice} from '@reduxjs/toolkit';
-import {fetchproducts, fetchIdProducts, fetchProductsKeyword, getProductsFilter} from './operations';
+import {fetchproducts, fetchIdProducts, fetchProductsKeyword, getProductsFilter} from '../operations';
 
 const allProducts ={
     products:[],

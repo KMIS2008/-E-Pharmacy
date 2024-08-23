@@ -1,4 +1,4 @@
-import {fetchcart, addCart, deleteCart, updateCartQuantity, addCartFinish} from './operations';
+import {fetchcart, addCart, deleteCart, updateCartQuantity, addCartFinish} from '../operations';
 import { createSlice} from '@reduxjs/toolkit';
 
 const allOrders ={

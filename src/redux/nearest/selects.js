@@ -1,0 +1,1 @@
+export const selectNearest=state=>state.nearest.nearest;
