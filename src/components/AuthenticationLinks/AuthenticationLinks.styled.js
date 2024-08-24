@@ -26,8 +26,9 @@ text-align: center;
 color: #F1F1F1;
 cursor: pointer;
 
+
 &:hover{
-    border: none;
+    border: 1px solid transparent;
     text-decoration: underline ;
 }
 `
