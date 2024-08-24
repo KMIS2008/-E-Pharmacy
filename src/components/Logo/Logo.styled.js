@@ -5,6 +5,9 @@ display: flex;
 gap: ${p=>p.theme.spacing(2)};
 align-items: center;
 cursor: pointer;
+&:hover{
+    text-decoration: underline;
+}
 `
 
 export const ImgLogo = styled.img`

@@ -33,4 +33,9 @@ export const CloseIcon = styled.svg`
   width: 32px;
   height: 32px;
   cursor: pointer;
+
+  &:hover{
+    width: 35px;
+    height: 35px;
+}
 `;

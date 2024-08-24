@@ -42,4 +42,9 @@ font-weight: 500;
 line-height: 1.29;
 text-align: center;
 color: #FFFFFF;
+
+cursor: pointer;
+&:hover{
+    background: #3F945F;
+}
 `

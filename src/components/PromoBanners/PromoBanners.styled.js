@@ -14,6 +14,5 @@ gap: 28px;
 @media (min-width: 768px) {
 display: flex;
 justify-content: center;
-
 }
 `

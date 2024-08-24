@@ -26,7 +26,6 @@ text-align: center;
 color: #F1F1F1;
 cursor: pointer;
 
-
 &:hover{
     border: 1px solid transparent;
     text-decoration: underline ;

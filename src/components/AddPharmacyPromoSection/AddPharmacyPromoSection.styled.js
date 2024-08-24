@@ -66,7 +66,6 @@ cursor: pointer;
 
 &:hover{
     background: #3F945F;
-
 }
 
 @media (min-width: 798px) {
@@ -78,8 +77,7 @@ cursor: pointer;
 export const Img = styled.img`
 width: 100%;
 @media (min-width: 1440px) {
-    width: 600px
-
+    width: 600px;
 }
 `
 

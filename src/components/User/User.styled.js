@@ -32,8 +32,6 @@ export const Text = styled.p`
   }
 
   @media (min-width: 768px) {
-
-
     &::first-letter {
     font-size: 18px;
   }

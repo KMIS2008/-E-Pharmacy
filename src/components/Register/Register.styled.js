@@ -59,7 +59,12 @@ font-weight: 400;
 line-height: 1,5;
 color: #1D1E2166;
 text-align: center;
+
 cursor: pointer;
+
+&:hover{
+    text-decoration: underline;
+}
 `
 
 export const ContainerInput=styled.div`

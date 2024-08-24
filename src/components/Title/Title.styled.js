@@ -10,7 +10,6 @@ margin-bottom: 20px;
     margin-bottom: 50px;
     width: 614px;
 }
-
 `
 
 export const Title=styled.h1`

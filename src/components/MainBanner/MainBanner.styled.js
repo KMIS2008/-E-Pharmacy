@@ -12,6 +12,5 @@ height: 312px;
 
 @media (min-width:1440px) {
     width: 749px;
-
 }
 `

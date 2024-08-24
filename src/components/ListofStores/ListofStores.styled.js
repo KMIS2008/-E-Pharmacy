@@ -151,6 +151,10 @@ text-align: center;
 color: #FFFFFF;
 
 cursor: pointer;
+
+&:hover{
+    background: #3F945F;
+}
 `
 export const ContainerButtonRating=styled.div`
 display: flex;

@@ -55,7 +55,6 @@ border: 1px solid #1D1E211A;
     color: #1D1E2166;
 }
 `
-
 export const Navigate=styled(NavLink)`
 font-family: Inter;
 font-size: 12px;
@@ -64,16 +63,15 @@ line-height: 1,5;
 color: #1D1E2166;
 text-align: center;
 cursor: pointer;
+
+&:hover{
+    text-decoration: underline;
+}
 `
 
 export const ContainerInput=styled.div`
 @media (min-width: 768px) {
     width: ${(p) => (p.$isModal ? '100%' : '323px')};
-    /* display: ${(p) => (p.$isModal ? 'block' : 'grid')};
-    grid-template-columns: ${(p) => (p.$isModal ? 'initial' : 'repeat(2, 1fr)')};
-    gap: ${(p) => (p.$isModal ? 'initial' : p.theme.spacing(2))}; */
-
-    /* margin-bottom: ${(p) => (p.$isModal ? p.theme.spacing(4) : p.theme.spacing(12))}; */
 }
 `
 

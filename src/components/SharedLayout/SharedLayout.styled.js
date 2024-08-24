@@ -6,5 +6,4 @@ min-width: 320px;
 max-width: 1440px;
 margin: auto;
 background: ${p=>p.theme.colors.whiteblue};
-
 `

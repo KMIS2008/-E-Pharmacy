@@ -93,6 +93,9 @@ background: #E850501A;
 color: #E85050;
 
 cursor: pointer;
+&:hover{
+    background: #3F945F;
+}
 `
 
 export const ContainerButton=styled.div`
@@ -145,4 +148,3 @@ export const Line=styled.div`
 border: 1px solid #1D1E211A;
 margin: 20px 0;
 `
-

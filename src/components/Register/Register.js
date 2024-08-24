@@ -75,7 +75,7 @@ export const RegisterForm=({isModal, setOpenRegisterModal})=>{
          <ContainerNavigate>
               <Button type="submit">Register</Button>
 
-              <Navigate to="/login" onClick={handleNavigate}>Already have an account?</Navigate>
+              <Navigate  onClick={handleNavigate}>Already have an account?</Navigate>
          </ContainerNavigate>
 
         <LoginModal isLoginModal={isLoginModal} setLoginModal={setLoginModal} isModal={isModal} setOpenRegisterModal={setOpenRegisterModal}/>

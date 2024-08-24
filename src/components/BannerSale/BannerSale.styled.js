@@ -63,6 +63,10 @@ line-height: 1,4;
 
 color: #93939A;
 cursor: pointer;
+
+&:hover{
+    text-decoration: underline;
+}
 `
 
 export const ContainerBanner=styled.div`
@@ -77,4 +81,3 @@ display: flex;
 align-items: center;
 gap:${p=>p.theme.spacing(2)}
 `
-

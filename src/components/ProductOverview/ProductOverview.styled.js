@@ -116,6 +116,12 @@ border: 1px solid #59B17A99;
 export const Сounter=styled.button`
 font-size: 20px;
 color: #59B17A;
+
+cursor: pointer;
+
+&:hover{
+   color:#3F945F;
+}
 `
 
 export const CounterNumber=styled.p`
@@ -158,5 +164,9 @@ text-align: center;
 cursor: pointer;
 
 color: ${p=>p.theme.colors.white};
+
+&:hover{
+    background: #3F945F;
+}
 `
 

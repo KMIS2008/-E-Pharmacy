@@ -37,10 +37,11 @@ display: block;
 width: 40px;
 height: 40px;
 border-radius: 50%;
-cursor: pointer;
 border: 1px solid #2626260D;
 text-align: center;
 font-size: 20px;
+
+cursor: pointer;
 
 &:hover{
     color:  #262626;
@@ -52,6 +53,8 @@ export const StyledRiArrowLeftDoubleFill = styled(RiArrowLeftDoubleFill)`
   color: #26262680;
   font-size: 20px;
 
+  cursor: pointer;
+
   &:hover {
     color: #262626;
   }
@@ -60,6 +63,8 @@ export const StyledRiArrowLeftDoubleFill = styled(RiArrowLeftDoubleFill)`
 export const StyledIoIosArrowBack = styled(IoIosArrowBack)`
   color: #26262680;
   font-size: 20px;
+
+  cursor: pointer;
 
   &:hover {
     color: #262626;

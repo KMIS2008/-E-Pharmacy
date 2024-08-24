@@ -11,6 +11,12 @@ position:absolute;
 right: 0; top: 0;
 border: none;
 margin-left: auto;
+
+cursor: pointer;
+
+&:hover{
+    background: #3F945F;
+}
 `
 
 export const Title =styled.h1`

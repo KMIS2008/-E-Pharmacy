@@ -79,6 +79,10 @@ text-align: center;
 
 color: ${p=>p.theme.colors.white};
 cursor: pointer;
+
+&:hover{
+    background: #3F945F;
+}
 `
 export const ButtonDetails=styled.button`
 font-family: Inter;
@@ -89,5 +93,10 @@ text-align: center;
 
 color: #1D1E21;
 text-decoration: underline;
+
 cursor: pointer;
+
+&:hover{
+    color: #3F945F;
+}
 `

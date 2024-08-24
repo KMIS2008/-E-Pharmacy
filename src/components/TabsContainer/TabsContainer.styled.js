@@ -23,6 +23,8 @@ background: ${p=>p.theme.colors.white};
 border-radius: 40px;
 opacity: 0px;
 
+cursor: pointer;
+
 &:hover{
     color: #FFFFFF;
     background: ${p=>p.theme.colors.green};
